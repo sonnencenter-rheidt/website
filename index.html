@@ -6,7 +6,7 @@
 <title>Sonnencenter Rheidt – Sonnenstudio in Niederkassel-Rheidt</title>
 <meta name="description" content="Sonnenstudio in Niederkassel-Rheidt: gepflegte Ergoline-Sonnenbänke ohne Termin, persönliche Beratung, Nageldesign, kosmetische Fußpflege und Lounge mit Kaffee. Marktstraße 33, Parken vor der Tür. Tel. 02208 9337181.">
 <link rel="canonical" href="https://sonnencenter-rheidt.de/">
-<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="icon" href="img/logo-web.svg" type="image/svg+xml">
 <meta name="theme-color" content="#2A2219">
 <meta property="og:title" content="Sonnencenter Rheidt – Dein Sonnenstudio in Niederkassel">
 <meta property="og:description" content="Ergoline-Sonnenbänke ohne Termin, Beratung, Nägel, Fußpflege und Lounge. Marktstraße 33, Niederkassel-Rheidt.">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TanningSalon","name":"Sonnencenter Rheidt","url":"https://sonnencenter-rheidt.de/",
-"image":"https://sonnencenter-rheidt.de/img/lounge.jpg","logo":"https://sonnencenter-rheidt.de/img/logo.svg",
+"image":"https://sonnencenter-rheidt.de/img/lounge.jpg","logo":"https://sonnencenter-rheidt.de/img/logo-web.svg",
 "telephone":"+49 2208 9337181","email":"sonnencenter-rheidt@outlook.de","priceRange":"€€",
 "address":{"@type":"PostalAddress","streetAddress":"Marktstraße 33","postalCode":"53859","addressLocality":"Niederkassel","addressRegion":"Nordrhein-Westfalen","addressCountry":"DE"},
 "areaServed":["Niederkassel","Rheidt","Mondorf","Lülsdorf","Ranzel","Troisdorf","Sieglar","Bergheim","Porz-Langel"],
@@ -73,10 +73,11 @@ em.gold{font-style:italic;background:var(--goldverlauf);-webkit-background-clip:
 
 /* Kopfzeile */
 header.top{position:sticky;top:0;z-index:20;background:rgba(252,250,245,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--linie)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:16px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:100px;gap:16px}
 .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-.brand img{height:50px;width:auto}
-.brand span{font-family:var(--display);font-size:22px;letter-spacing:.06em}
+.brand img{height:80px;width:auto}
+@media (max-width:640px){.top .wrap{height:84px}.brand img{height:64px}}
+.brand span{display:none}
 nav.menu{display:flex;gap:30px;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
 nav.menu a{text-decoration:none;color:var(--grau);position:relative;padding:6px 0}
 nav.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
@@ -93,6 +94,8 @@ nav.menu a:hover{color:var(--tinte)}nav.menu a:hover::after{transform:scaleX(1)}
 .hero::after{content:"";position:absolute;inset:22px;z-index:1;border:1px solid rgba(226,201,140,.45);pointer-events:none}
 .hero .wrap{position:relative;z-index:2;padding-top:140px;padding-bottom:84px;width:100%}
 .hero .eyebrow{color:var(--gold-hell)}
+.hero .wrap>img.hero-logo{position:static;width:auto;height:160px;margin:0 0 24px -6px;filter:drop-shadow(0 4px 20px rgba(0,0,0,.5));animation:none;transform:none}
+@media (max-width:640px){.hero .wrap>img.hero-logo{height:115px}}
 .hero em.gold,.cta em.gold{background:none;color:#F0D594;text-shadow:0 2px 18px rgba(0,0,0,.55)}
 .hero h1{text-shadow:0 2px 24px rgba(0,0,0,.35)}
 .hero h1{font-size:clamp(48px,7.8vw,104px);max-width:12ch;margin-top:16px}
@@ -213,20 +216,52 @@ details p{color:var(--grau);margin:12px 0 0}
 .note{font-family:var(--display);font-size:96px;line-height:1;background:var(--goldverlauf);-webkit-background-clip:text;background-clip:text;color:transparent}
 .sterne{font-size:22px;letter-spacing:10px;color:var(--gold);margin-top:6px}
 .stimmen p{color:var(--grau);margin:14px 0 28px}
+.zitate{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:10px 0 40px;text-align:left}
+.zitate blockquote{margin:0;background:var(--weiss);border:1px solid var(--linie);padding:30px 28px;position:relative}
+.zitate blockquote::before{content:"“";position:absolute;top:-6px;left:22px;font-family:var(--display);font-size:72px;line-height:1;color:var(--gold-hell)}
+.zitate blockquote p{margin:16px 0 14px;font-family:var(--display);font-style:italic;font-size:19px;line-height:1.5;color:var(--tinte)}
+.zitate cite{font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-tief)}
+@media (max-width:900px){.zitate{grid-template-columns:1fr}}
+/* Erster Besuch */
+.erstbesuch{background:var(--perl);padding-bottom:40px}
+.erstbesuch .kopf{max-width:660px;margin:0 auto 50px}
+.erstbesuch .kopf p{color:var(--grau)}
+.schritte{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.schritte li{counter-increment:s;background:var(--weiss);border:1px solid var(--linie);padding:34px 26px 30px;position:relative}
+.schritte li::before{content:counter(s);display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);font-family:var(--display);font-size:22px;color:var(--gold-tief);margin-bottom:16px}
+.schritte b{display:block;font-family:var(--display);font-weight:400;font-size:23px;margin-bottom:6px}
+.schritte span{color:var(--grau);font-size:15.5px}
+@media (max-width:980px){.schritte{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.schritte{grid-template-columns:1fr}}
+/* Warum Pflege */
+.warum{background:var(--creme);border:1px solid var(--linie);padding:44px;margin-bottom:44px}
+.warum-kopf{max-width:720px;margin:0 auto 30px;text-align:center}
+.warum-kopf h3{font-size:30px}
+.warum-kopf p{color:var(--grau);margin:12px 0 0}
+.warum-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.warum-grid div{border-top:1px solid var(--gold);padding-top:18px}
+.warum-grid .nr{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-tief);font-weight:600}
+.warum-grid b{display:block;font-family:var(--display);font-weight:400;font-size:21px;margin:6px 0 8px}
+.warum-grid p{margin:0;color:var(--grau);font-size:15.5px}
+@media (max-width:900px){.warum-grid{grid-template-columns:1fr}.warum{padding:30px 22px}}
 
 /* Abschluss */
 .cta{position:relative;color:#fff;text-align:center;overflow:hidden}
 .cta>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.cta::before{content:"";position:absolute;inset:0;background:rgba(28,21,12,.72)}
+.cta::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,21,12,.9),rgba(28,21,12,.82))}
+.cta{background:var(--espresso)}
+.cta>img{filter:blur(2px) saturate(.6);opacity:.22}
+.cta::before{z-index:1}
+.cta h2,.cta p,.cta .eyebrow{text-shadow:0 2px 18px rgba(0,0,0,.7)}
 .cta::after{content:"";position:absolute;inset:22px;border:1px solid rgba(226,201,140,.4);pointer-events:none}
 .cta .wrap{position:relative;z-index:2}
 .cta h2{font-size:clamp(40px,6vw,72px)}
-.cta p{color:rgba(255,255,255,.88);max-width:540px;margin:0 auto 34px}
+.cta p{color:#fff;font-size:19px;max-width:540px;margin:0 auto 34px}
 .cta .actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
 
 footer{background:var(--espresso);color:#BFB49F;font-size:14px;padding-block:60px}
 footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
-footer img{height:56px;width:auto;margin-bottom:14px}
+footer img{height:120px;width:auto;margin-bottom:18px}
 footer h4{font-family:var(--display);font-weight:400;font-size:19px;color:#fff;margin:0 0 12px}
 footer a{text-decoration:none}footer a:hover{color:var(--gold-hell)}
 footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px}
@@ -248,7 +283,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#start"><img src="img/logo.svg" alt="Logo Sonnencenter Rheidt"><span>Sonnencenter Rheidt</span></a>
+    <a class="brand" href="#start"><img src="img/logo-web.svg" alt="Logo Sonnencenter Rheidt"><span>Sonnencenter Rheidt</span></a>
     <nav class="menu" aria-label="Hauptmenü">
       <a href="#studio">Studio</a><a href="#leistungen">Leistungen</a><a href="#pflege">Pflege</a><a href="#besuch">Öffnungszeiten</a><a href="#fragen">Fragen</a>
     </nav>
@@ -260,6 +295,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
   <section class="hero" style="padding:0">
     <img src="img/lounge.jpg" alt="Lounge im Sonnencenter Rheidt mit grünen Samtsofas, goldenen Lampen und Palme im Fenster">
     <div class="wrap">
+      <img class="hero-logo" src="img/logo-web.svg" alt="Sonnencenter Rheidt – Enjoy your Sunshine">
       <div class="eyebrow">Sonnenstudio · Niederkassel-Rheidt</div>
       <h1>Deine <em class="gold">Auszeit</em> in Rheidt.</h1>
       <p>Gepflegte Ergoline-Sonnenbänke, persönliche Beratung und eine Lounge zum Ankommen – mitten in Rheidt, mit Parkplätzen direkt vor der Tür.</p>
@@ -286,6 +322,19 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
         </ul>
       </div>
       <div class="rahmenbild"><img src="img/empfang.jpg" alt="Empfang mit Theke, Taschenregal und Lounge-Sesseln im Sonnencenter Rheidt" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="erstbesuch" id="erster-besuch">
+    <div class="wrap">
+      <div class="center kopf"><div class="eyebrow">Neu bei uns?</div><h2>Dein erster Besuch <em class="gold">in vier Schritten</em></h2><div class="ornament"><span>✦</span></div>
+        <p>Keine Sorge, wenn du noch nie im Sonnenstudio warst – wir nehmen uns Zeit und erklären dir alles in Ruhe.</p></div>
+      <ol class="schritte">
+        <li><b>Ankommen</b><span>Parken direkt vor der Tür, reinkommen, durchatmen – ein Termin ist nicht nötig.</span></li>
+        <li><b>Beratung</b><span>Wir sprechen über deinen Hauttyp und finden die passende Bank und Besonnungszeit für dich.</span></li>
+        <li><b>Sonnen</b><span>Deine Kabine ist frisch gereinigt, Schutzbrille liegt bereit. Lehn dich zurück und genieß die Wärme.</span></li>
+        <li><b>Pflegen &amp; genießen</b><span>Danach ein Tipp zur passenden Pflege und, wenn du magst, ein Kaffee in unserer Lounge.</span></li>
+      </ol>
     </div>
   </section>
 
@@ -342,6 +391,14 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
     <div class="wrap">
       <div class="center kopf"><div class="eyebrow">Pflege von seven suns</div><h2>Schön gepflegt <em class="gold">vor und nach dem Sonnen</em></h2><div class="ornament"><span>✦</span></div>
         <p>Hochwertige Pflege von seven suns – direkt bei uns im Studio. Wir beraten dich gern, welches Produkt zu deiner Haut passt.</p></div>
+      <div class="warum">
+        <div class="warum-kopf"><h3>Warum Pflege beim Sonnen so wichtig ist</h3><p>Wärme und Licht entziehen der Haut Feuchtigkeit. Gut gepflegte Haut fühlt sich angenehmer an – und deine Bräune wirkt gleichmäßiger und bleibt länger schön.</p></div>
+        <div class="warum-grid">
+          <div><span class="nr">Vor &amp; während</span><b>Feuchtigkeit für ein schönes Ergebnis</b><p>Spezielle Solarium-Kosmetik wie Beschleuniger oder Bronzer versorgt deine Haut mit Feuchtigkeit und unterstützt ein gleichmäßiges Bräunungsergebnis. Für die Sonnenbank gemacht – normale Bodylotion und Öle gehören nicht auf die Acrylscheibe.</p></div>
+          <div><span class="nr">Danach</span><b>After-Tan für ein gepflegtes Hautgefühl</b><p>Eine After-Tan-Lotion gibt der Haut nach dem Sonnen Feuchtigkeit zurück. So fühlt sie sich geschmeidig an und deine Bräune sieht länger frisch aus.</p></div>
+          <div><span class="nr">Unsere Tipps</span><b>So holst du mehr aus jeder Besonnung</b><p>Haut vorher reinigen und Make-up entfernen. Bei Bronzern mit Spätbräunung erst nach ein paar Stunden duschen. Und das Gesicht mit einem eigenen Produkt wie Shine pflegen.</p></div>
+        </div>
+      </div>
       <div class="regal">
         <figure><img src="img/7suns-stardust.jpg" alt="seven suns Stardust" loading="lazy"><figcaption><span>Bronzer · Glow</span><b>Stardust</b><p>Bronzer mit goldenen Schimmerpartikeln für tiefe Bräune und sichtbaren Glow – mit Henna, Karottenöl und Sheabutter. Tropischer Duft.</p></figcaption></figure>
         <figure><img src="img/7suns-tanthrill.jpg" alt="seven suns Tan Thrill" loading="lazy"><figcaption><span>Weißer Bronzer</span><b>Tan Thrill</b><p>Weißer Bronzer mit verzögerter Bräunung für Anspruchsvolle – mit Reishi, Tigergras und Ashwagandha. Exotisch-frischer Duft.</p></figcaption></figure>
@@ -418,6 +475,11 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
       <div class="note">4,9</div>
       <div class="sterne" aria-label="4,9 von 5 Sternen">★★★★★</div>
       <p>bei über 160 Bewertungen auf Google – danke an alle Gäste!</p>
+      <div class="zitate">
+        <blockquote><p>„Das Studio ist sehr sauber und sieht dazu auch wirklich einladend und gemütlich aus. Man hat sich Zeit für uns genommen, um uns zu beraten.“</p><cite>Google-Bewertung · Juni 2026</cite></blockquote>
+        <blockquote><p>„Wir wurden vor dem Bräunen sehr professionell beraten und haben uns sehr gut aufgehoben gefühlt. Es war wie ein Tag am Meer.“</p><cite>Google-Bewertung · Oktober 2026</cite></blockquote>
+        <blockquote><p>„Sehr gepflegt und sauber, super Atmosphäre! Dank Klimaanlage kann man das Sonnenstudio auch bei großer Hitze besuchen!“</p><cite>Google-Bewertung · August 2026</cite></blockquote>
+      </div>
       <a class="btn btn-line dunkel" href="https://g.page/r/CUCSYFHP8uU-EBM/review" target="_blank" rel="noopener">Bewertung schreiben</a>
     </div>
   </section>
@@ -439,7 +501,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
 
 <footer>
   <div class="wrap">
-    <div><img src="img/logo.svg" alt="Sonnencenter Rheidt"><div>Dein Sonnenstudio in Niederkassel-Rheidt.<br>Gepflegt, persönlich, entspannt.</div></div>
+    <div><img src="img/logo-web.svg" alt="Sonnencenter Rheidt"><div>Dein Sonnenstudio in Niederkassel-Rheidt.<br>Gepflegt, persönlich, entspannt.</div></div>
     <div><h4>Besuch</h4>Marktstraße 33<br>53859 Niederkassel<br><a href="tel:+4922089337181">02208 9337181</a></div>
     <div><h4>Folge uns</h4><a href="https://www.instagram.com/sonnencenter.rheidt" target="_blank" rel="noopener">Instagram</a><br><a href="https://g.page/r/CUCSYFHP8uU-EBM/review" target="_blank" rel="noopener">Google-Bewertungen</a></div>
     <div class="unten"><span>© <span id="jahr">2026</span> Sonnencenter Rheidt</span><span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></div>
