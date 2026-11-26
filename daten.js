@@ -29,7 +29,6 @@ window.STUDIO = {
     { von: "2026-12-04", bis: "2026-12-24", text: "Christmas Suncard: 11 € Sonne geschenkt – nur bis Heiligabend" },
     { von: "2026-12-07", bis: "2026-12-17", text: "Nägel vor den Feiertagen: letzte Termine bis Donnerstag, 17.12. – 02208 9337181" },
     { von: "2026-12-18", bis: "2027-01-01", text: "Feiertage: 24.12. und 31.12. 10–15 Uhr · 25.12., 26.12. und 01.01. geschlossen" },
-    { von: "2026-12-18", bis: "2027-01-03", text: "Nägel und Fußpflege machen Weihnachtspause vom 21.12. bis 03.01." },
     { von: "2026-12-10", bis: "2027-01-31", text: "Neu ab 02.01.2027: Pressotherapie – 30 Minuten Wohlfühlzeit für deine Beine" }
   ],
 
