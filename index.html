@@ -235,7 +235,9 @@ section{padding-block:110px}
 .regal p{margin:6px 0 0;font-size:14.5px;line-height:1.6;color:var(--grau)}
 .regal figure:hover{border-color:var(--gold-hell);transform:translateY(-3px)}
 .regal img{aspect-ratio:1;object-fit:contain;width:100%}
-.regal figcaption{display:grid;gap:2px;margin-top:12px}
+.regal .pvid{position:relative;aspect-ratio:1;background:#1E1A16;overflow:hidden}
+.regal .pvid video{width:100%;height:100%;object-fit:contain;display:block}
+.regal .pvid small{position:absolute;right:8px;bottom:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#F3E6C4;background:rgba(30,26,22,.6);padding:3px 7px;border-radius:999px}.regal figcaption{display:grid;gap:2px;margin-top:12px}
 .regal b{font-family:var(--display);font-weight:400;font-size:22px}
 .regal span{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-tief)}
 @media (max-width:1000px){.regal{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -512,11 +514,11 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
         </div>
       </div>
       <div class="regal">
-        <figure><img src="img/7suns-stardust.jpg" alt="seven suns Stardust" loading="lazy"><figcaption><span>Bronzer · Glow</span><b>Stardust</b><p>Bronzer mit goldenen Schimmerpartikeln für tiefe Bräune und sichtbaren Glow – mit Henna, Karottenöl und Sheabutter. Tropischer Duft.</p></figcaption></figure>
+        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-stardust-video.jpg" aria-label="Kurzer Produktfilm seven suns Stardust"><source src="img/7suns-stardust.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Bronzer · Glow</span><b>Stardust</b><p>Bronzer mit goldenen Schimmerpartikeln für tiefe Bräune und sichtbaren Glow – mit Henna, Karottenöl und Sheabutter. Tropischer Duft.</p></figcaption></figure>
         <figure><img src="img/7suns-tanthrill.jpg" alt="seven suns Tan Thrill" loading="lazy"><figcaption><span>Weißer Bronzer</span><b>Tan Thrill</b><p>Weißer Bronzer mit verzögerter Bräunung für Anspruchsvolle – mit Reishi, Tigergras und Ashwagandha. Exotisch-frischer Duft.</p></figcaption></figure>
-        <figure><img src="img/7suns-americanglamour.jpg" alt="seven suns American Glamour" loading="lazy"><figcaption><span>Black Bronzer</span><b>American Glamour</b><p>Starker Black Bronzer für mittlere bis dunkle Haut – mit Buritiöl, Kakaobutter und Karottenöl. Tropischer Duft.</p></figcaption></figure>
-        <figure><img src="img/7suns-promqueen.jpg" alt="seven suns Prom Queen" loading="lazy"><figcaption><span>Ultra Dark Bronzer</span><b>Prom Queen</b><p>Ultra-dunkler Bronzer für eine gleichmäßige Bräune, die lange hält – mit Walnussschale, Aloe vera und Kokosöl. Blumig-frisch.</p></figcaption></figure>
-        <figure><img src="img/7suns-purecharm.jpg" alt="seven suns Pure Charm" loading="lazy"><figcaption><span>Gel-Accelerator</span><b>Pure Charm</b><p>Leichtes Gel für mehr Bräune, ohne zu beschweren – mit Hanföl, Grünem Kaviar und Babassuöl. Frisch-blumiger Duft.</p></figcaption></figure>
+        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-americanglamour-video.jpg" aria-label="Kurzer Produktfilm seven suns American Glamour"><source src="img/7suns-americanglamour.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Black Bronzer</span><b>American Glamour</b><p>Starker Black Bronzer für mittlere bis dunkle Haut – mit Buritiöl, Kakaobutter und Karottenöl. Tropischer Duft.</p></figcaption></figure>
+        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-promqueen-video.jpg" aria-label="Kurzer Produktfilm seven suns Prom Queen"><source src="img/7suns-promqueen.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Ultra Dark Bronzer</span><b>Prom Queen</b><p>Ultra-dunkler Bronzer für eine gleichmäßige Bräune, die lange hält – mit Walnussschale, Aloe vera und Kokosöl. Blumig-frisch.</p></figcaption></figure>
+        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-purecharm-video.jpg" aria-label="Kurzer Produktfilm seven suns Pure Charm"><source src="img/7suns-purecharm.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Gel-Accelerator</span><b>Pure Charm</b><p>Leichtes Gel für mehr Bräune, ohne zu beschweren – mit Hanföl, Grünem Kaviar und Babassuöl. Frisch-blumiger Duft.</p></figcaption></figure>
         <figure><img src="img/7suns-tandelight.jpg" alt="seven suns Tan Delight" loading="lazy"><figcaption><span>Beschleuniger · Butter</span><b>Tan Delight</b><p>Bräunungsbeschleuniger als zarte Body Butter – mit Hyaluron, Sheabutter und Grüntee. Fruchtig-süß, ideal auch für Einsteiger.</p></figcaption></figure>
         <figure><img src="img/7suns-shine.jpg" alt="seven suns Shine" loading="lazy"><figcaption><span>Gesicht</span><b>Shine</b><p>Sanfter Intensifier speziell fürs Gesicht – mit Perlenextrakt, Mandelöl und Mangobutter. Frisch-würziger Duft, leichte Textur.</p></figcaption></figure>
         <figure><img src="img/7suns-code-bronzer.jpg" alt="seven suns CODE Bronzer for Men" loading="lazy"><figcaption><span>Für Männer · Bronzer</span><b>CODE Bronzer</b><p>Dunkler Bronzer für Männer mit mittlerer bis dunkler Haut – mit Avocadoöl, Mangobutter und Walnussschale. Würziger Duft.</p></figcaption></figure>
@@ -558,7 +560,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
         <h3>So findest du uns</h3>
         <p>Marktstraße 33<br>53859 Niederkassel-Rheidt</p>
         <figure class="parkfilm">
-          <video id="parkfilm" muted loop playsinline preload="none" poster="img/parkplatz.jpg" aria-label="Kurzer Film: Kundenparkplätze direkt vor dem Sonnencenter Rheidt in der Marktstraße 33">
+          <video id="parkfilm" class="autovideo" muted loop playsinline preload="none" poster="img/parkplatz.jpg" aria-label="Kurzer Film: Kundenparkplätze direkt vor dem Sonnencenter Rheidt in der Marktstraße 33">
             <source src="img/parkplatz.mp4" type="video/mp4">
           </video>
           <figcaption>Unsere Kundenparkplätze – direkt vor der Tür</figcaption>
@@ -721,14 +723,13 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
 })();
 </script>
 <script>
-(function(){var v=document.getElementById("parkfilm");if(!v)return;
- if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){v.controls=true;return;}
- var t=null;function pruefen(){t=null;var r=v.getBoundingClientRect(),h=window.innerHeight||document.documentElement.clientHeight;
-  var sichtbar=r.bottom>h*0.15&&r.top<h*0.85;
-  if(sichtbar&&v.paused){v.play().catch(function(){});}else if(!sichtbar&&!v.paused){v.pause();}}
+(function(){var vs=[].slice.call(document.querySelectorAll("video.autovideo"));if(!vs.length)return;
+ if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){vs.forEach(function(v){v.controls=true});return;}
+ var t=null;function pruefen(){t=null;var h=window.innerHeight||document.documentElement.clientHeight;
+  vs.forEach(function(v){var r=v.getBoundingClientRect();var sichtbar=r.bottom>h*0.1&&r.top<h*0.9&&r.width>0;
+   if(sichtbar&&v.paused){v.play().catch(function(){});}else if(!sichtbar&&!v.paused){v.pause();}});}
  function bald(){if(!t)t=setTimeout(pruefen,150);}
  window.addEventListener("scroll",bald,{passive:true});window.addEventListener("resize",bald);pruefen();
-})();
-</script><script data-goatcounter="https://sonnencenter-rheidt.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+})();</script><script data-goatcounter="https://sonnencenter-rheidt.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
