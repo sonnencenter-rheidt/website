@@ -25,7 +25,7 @@ window.STUDIO = {
 
   /* Laufschrift oben – erscheint nur im Zeitraum von/bis */
   laufschrift: [
-    { von: "2026-11-26", bis: "2026-12-24", text: "Geschenkgutscheine mit frei wählbarem Betrag – direkt an der Theke" },
+    { von: "2026-11-26", bis: "2026-12-24", text: "Weihnachtsgeschenk gesucht? Gutscheine für Sonne, Nägel und Fußpflege – bei uns im Studio" },
     { von: "2026-12-04", bis: "2026-12-24", text: "Christmas Suncard: 11 € Sonne geschenkt – nur bis Heiligabend" },
     { von: "2026-12-07", bis: "2026-12-17", text: "Nägel vor den Feiertagen: letzte Termine bis Donnerstag, 17.12. – 02208 9337181" },
     { von: "2026-12-18", bis: "2027-01-01", text: "Feiertage: 24.12. und 31.12. 10–15 Uhr · 25.12., 26.12. und 01.01. geschlossen" },
@@ -39,7 +39,7 @@ window.STUDIO = {
       text: "Lade deine Suncard auf und bekomm 11 € Sonne geschenkt – für dich selbst oder als Weihnachtsgeschenk. Gültig für alle Sonnenbänke, erhältlich direkt bei uns im Studio.",
       frist: "04.12. – 24.12.", bild: "img/aktion-christmas-suncard.jpg", bildtext: "Christmas Suncard im Sonnencenter Rheidt", knopf: "Fragen? Ruf uns an" },
     { von: "2026-11-26", bis: "2026-12-24", kicker: "Geschenkidee", titel: "Sonne verschenken",
-      text: "Ein Gutschein vom Sonnencenter Rheidt passt immer: Betrag frei wählen, einlösbar für Besonnung, Nageldesign, Fußpflege oder Pflegeprodukte. Direkt bei uns an der Theke.",
+      text: "Ein Gutschein vom Sonnencenter Rheidt passt immer – einlösbar für Besonnung, Nageldesign, Fußpflege oder Pflegeprodukte. Erhältlich direkt bei uns im Studio.",
       frist: "Heiligabend bis 15 Uhr geöffnet", bild: "img/aktion-gutscheine.jpg", bildtext: "Geschenkgutschein des Sonnencenter Rheidt am Weihnachtsbaum", knopf: "Jetzt anrufen" }
   ],
 

@@ -73,12 +73,12 @@ em.gold{font-style:italic;background:var(--goldverlauf);-webkit-background-clip:
 
 /* Kopfzeile */
 header.top{position:sticky;top:0;z-index:20;background:rgba(252,250,245,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--linie)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:100px;gap:16px}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-.brand img{height:80px;width:auto}
-@media (max-width:640px){.top .wrap{height:84px}.brand img{height:64px}}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:120px;gap:16px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
+.brand img{height:104px;width:auto;filter:drop-shadow(0 1px 1px rgba(90,62,10,.35))}
+@media (max-width:640px){.top .wrap{height:92px}.brand img{height:76px}}
 .brand>span:not(.glanzlogo){display:none}
-nav.menu{display:flex;gap:26px;white-space:nowrap;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+nav.menu{display:flex;gap:17px;white-space:nowrap;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
 nav.menu a{text-decoration:none;color:var(--grau);position:relative;padding:6px 0}
 nav.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
 nav.menu a:hover{color:var(--tinte)}nav.menu a:hover::after{transform:scaleX(1)}
@@ -90,9 +90,8 @@ nav.menu a:hover{color:var(--tinte)}nav.menu a:hover::after{transform:scaleX(1)}
 .menuknopf[aria-expanded="true"] span:nth-child(2){opacity:0}
 .menuknopf[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 .nur-mobil{display:none}
-section[id],main[id]{scroll-margin-top:110px}
-@media (max-width:1100px){nav.menu{gap:20px}}
-@media (max-width:1180px){
+section[id],main[id]{scroll-margin-top:130px}
+@media (max-width:1360px){
   .top .call{margin-left:auto}
   .menuknopf{display:flex}
   nav.menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--perl);border-bottom:1px solid var(--gold);box-shadow:0 18px 30px -20px rgba(42,34,25,.5);padding:8px max(22px,env(safe-area-inset-left)) 18px}
@@ -203,25 +202,10 @@ section{padding-block:110px}
 .brand:hover .glanzlogo i{animation-duration:1.6s}
 @media (prefers-reduced-motion:reduce){.glanzlogo i{animation:none;display:none}}
 
-/* Untermenü Wellness */
-.unter{position:relative}
-.unter-kopf::before{content:"";}
-.unter-kopf{padding-right:14px !important}
-.unter-kopf::after{content:"" !important;position:absolute !important;right:0;top:50%;left:auto !important;bottom:auto !important;width:6px !important;height:6px !important;border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);background:none !important;transform:translateY(-70%) rotate(45deg) !important}
-.unter-liste{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:320px;background:var(--perl);border:1px solid var(--linie);border-top:2px solid var(--gold);box-shadow:0 22px 40px -24px rgba(42,34,25,.55);padding:10px 0;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;margin-top:14px;white-space:normal;z-index:40}
-.unter-liste::before{content:"";position:absolute;left:0;right:0;top:-18px;height:18px}
-.unter:hover .unter-liste,.unter:focus-within .unter-liste{opacity:1;visibility:visible}
-.unter-liste a{display:block;padding:12px 22px !important;text-transform:none;letter-spacing:0}
-.unter-liste a::after{display:none}
-.unter-liste a:hover{background:var(--creme)}
-.unter-liste b{display:block;font-family:var(--display);font-weight:400;font-size:18px;color:var(--tinte)}
-.unter-liste small{display:block;font-size:12.5px;color:var(--grau);margin-top:2px}
-@media (max-width:1180px){
-  .unter-kopf::after{display:none !important}
-  .unter-liste{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:0;border-left:2px solid var(--gold-hell);margin:0 0 6px;padding:0;min-width:0;background:none}
-  .unter-liste a{padding:12px 0 12px 16px !important;border-bottom:1px solid var(--linie)}
-  .unter-liste b{font-size:17px}
-}
+/* Parkplatz-Film */
+.parkfilm{margin:14px 0 12px}
+.parkfilm video{display:block;width:100%;max-height:420px;object-fit:cover;border-radius:6px;border:1px solid var(--gold);background:#2B2620}
+.parkfilm figcaption{font-size:12.5px;letter-spacing:.08em;color:var(--grau);margin-top:6px;text-align:center}
 /* Versprechen */.versprechen{background:var(--espresso);color:#EDE4D2;position:relative;overflow:hidden}
 .versprechen::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 85% 20%,rgba(201,162,79,.16),transparent 70%)}
 .versprechen .wrap{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:72px;align-items:center}
@@ -366,13 +350,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
     <a class="brand" href="#start"><img src="img/logo-glanz.svg" alt="Logo Sonnencenter Rheidt"></a>
     <nav class="menu" id="menu" aria-label="Hauptmenü">
       <a href="#erster-besuch">Erster Besuch</a><a href="#leistungen">Sonnen</a>
-      <div class="unter"><a href="#wellness" class="unter-kopf" aria-haspopup="true">Wellness &amp; Schönheit</a>
-        <div class="unter-liste">
-          <a href="#naegel"><b>Nageldesign</b><small>Maniküre &amp; Shellac · Mo &amp; Do nach Termin</small></a>
-          <a href="#fusspflege"><b>Kosmetische Fußpflege</b><small>Gepflegte Füße, auf Wunsch mit Shellac</small></a>
-          <a href="#pressotherapie"><b>Pressotherapie</b><small>30 Min. Wohlfühlzeit für die Beine · ab 02.01.2027</small></a>
-        </div>
-      </div>
+      <a href="#naegel">Nägel</a><a href="#fusspflege">Fußpflege</a><a href="#pressotherapie">Pressotherapie</a>
       <a href="#pflege">Pflege</a><a href="#besuch">Öffnungszeiten</a><a href="#fragen">Fragen</a>
       <a class="nur-mobil" href="tel:+4922089337181">Anrufen · 02208 9337181</a>
     </nav>
@@ -451,7 +429,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
   <section class="wellness" id="wellness">
     <div class="wrap">
       <div class="kopf center">
-        <div class="eyebrow">Wellness &amp; Schönheit</div>
+        <div class="eyebrow">Nägel · Fußpflege · Pressotherapie</div>
         <h2>Gönn dir mehr als <em class="gold">nur Sonne</em></h2>
         <div class="ornament"><span>✦</span></div>
         <p>Nageldesign, kosmetische Fußpflege und ab Januar Pressotherapie – alles in unserem Studio in Niederkassel-Rheidt, mit Parkplätzen direkt vor der Tür.</p>
@@ -579,6 +557,12 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
       <div class="infobox">
         <h3>So findest du uns</h3>
         <p>Marktstraße 33<br>53859 Niederkassel-Rheidt</p>
+        <figure class="parkfilm">
+          <video id="parkfilm" muted loop playsinline preload="none" poster="img/parkplatz.jpg" aria-label="Kurzer Film: Kundenparkplätze direkt vor dem Sonnencenter Rheidt in der Marktstraße 33">
+            <source src="img/parkplatz.mp4" type="video/mp4">
+          </video>
+          <figcaption>Unsere Kundenparkplätze – direkt vor der Tür</figcaption>
+        </figure>
         <p class="klein">Eigene Kundenparkplätze direkt vor dem Studio. Schnell erreichbar aus Mondorf, Lülsdorf, Ranzel, Troisdorf-Sieglar, Bergheim und Porz-Langel.</p>
         <a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sonnencenter+Rheidt+Marktstra%C3%9Fe+33+53859+Niederkassel" target="_blank" rel="noopener">Route planen</a>
       </div>
@@ -736,6 +720,15 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
   var j=document.getElementById("jahr"); if(j) j.textContent=jetzt.getFullYear();
 })();
 </script>
-<script data-goatcounter="https://sonnencenter-rheidt.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+(function(){var v=document.getElementById("parkfilm");if(!v)return;
+ if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){v.controls=true;return;}
+ var t=null;function pruefen(){t=null;var r=v.getBoundingClientRect(),h=window.innerHeight||document.documentElement.clientHeight;
+  var sichtbar=r.bottom>h*0.15&&r.top<h*0.85;
+  if(sichtbar&&v.paused){v.play().catch(function(){});}else if(!sichtbar&&!v.paused){v.pause();}}
+ function bald(){if(!t)t=setTimeout(pruefen,150);}
+ window.addEventListener("scroll",bald,{passive:true});window.addEventListener("resize",bald);pruefen();
+})();
+</script><script data-goatcounter="https://sonnencenter-rheidt.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

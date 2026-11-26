@@ -9,9 +9,9 @@
     </linearGradient>
     <linearGradient id="glanz" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="520" y2="0" gradientTransform="translate(-700 0) skewX(-20)">
       <stop offset="0" stop-color="#FFF6D8" stop-opacity="0"/>
-      <stop offset="0.45" stop-color="#FFF3C4" stop-opacity="0.85"/>
-      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="1"/>
-      <stop offset="0.55" stop-color="#FFE9A8" stop-opacity="0.85"/>
+      <stop offset="0.45" stop-color="#FFE7A0" stop-opacity="0.35"/>
+      <stop offset="0.5" stop-color="#FFF1C2" stop-opacity="0.5"/>
+      <stop offset="0.55" stop-color="#FFE7A0" stop-opacity="0.35"/>
       <stop offset="1" stop-color="#FFF6D8" stop-opacity="0"/>
       <animateTransform attributeName="gradientTransform" type="translate" values="-700 0;1500 0;1500 0" keyTimes="0;0.38;1" dur="6s" begin="1.2s" repeatCount="indefinite" additive="sum"/>
     </linearGradient>
