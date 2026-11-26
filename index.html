@@ -77,12 +77,12 @@ header.top{position:sticky;top:0;z-index:20;background:rgba(252,250,245,.92);bac
 .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
 .brand img{height:80px;width:auto}
 @media (max-width:640px){.top .wrap{height:84px}.brand img{height:64px}}
-.brand span{display:none}
-nav.menu{display:flex;gap:30px;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.brand>span:not(.glanzlogo){display:none}
+nav.menu{display:flex;gap:26px;white-space:nowrap;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
 nav.menu a{text-decoration:none;color:var(--grau);position:relative;padding:6px 0}
 nav.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
 nav.menu a:hover{color:var(--tinte)}nav.menu a:hover::after{transform:scaleX(1)}
-.top .call{padding:12px 20px}
+.top .call{padding:12px 20px;white-space:nowrap}
 .menuknopf{display:none;align-items:center;gap:5px;flex-direction:column;justify-content:center;background:none;border:1px solid var(--gold);border-radius:999px;padding:10px 16px;cursor:pointer;color:var(--gold-tief)}
 .menuknopf span{display:block;width:20px;height:1.5px;background:var(--gold-tief);transition:transform .3s,opacity .3s}
 .menuknopf b{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-top:2px}
@@ -92,7 +92,8 @@ nav.menu a:hover{color:var(--tinte)}nav.menu a:hover::after{transform:scaleX(1)}
 .nur-mobil{display:none}
 section[id],main[id]{scroll-margin-top:110px}
 @media (max-width:1100px){nav.menu{gap:20px}}
-@media (max-width:960px){
+@media (max-width:1180px){
+  .top .call{margin-left:auto}
   .menuknopf{display:flex}
   nav.menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--perl);border-bottom:1px solid var(--gold);box-shadow:0 18px 30px -20px rgba(42,34,25,.5);padding:8px max(22px,env(safe-area-inset-left)) 18px}
   nav.menu.offen{display:flex}
@@ -156,6 +157,51 @@ section{padding-block:110px}
 .karte.text .inhalt{padding-top:40px}
 @media (max-width:980px){.karten{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.karten{grid-template-columns:1fr}}
+
+.gruppe-titel{display:flex;align-items:center;gap:18px;margin:0 0 26px;color:var(--gold-tief);font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:600}
+.gruppe-titel::after{content:"";flex:1;height:1px;background:var(--linie)}
+@media (min-width:981px){.leistungen .karten{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* Wellness & Schönheit */
+.wellness{background:var(--weiss)}
+.wellness .kopf{max-width:680px;margin:0 auto 60px}
+.wellness .kopf p{color:var(--grau)}
+.wellness-liste{display:grid;gap:56px}
+.w-eintrag{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.w-eintrag.umgekehrt .w-bild{order:2}
+.w-bild{position:relative;isolation:isolate}
+.w-bild img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.w-bild::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--gold);z-index:-1}
+.w-ornament{aspect-ratio:4/3;display:grid;place-items:center;background:var(--creme);text-align:center}
+.w-ornament.dunkel{background:var(--espresso)}
+.w-ornament span{font-family:var(--display);font-style:italic;font-size:clamp(34px,4vw,52px);line-height:1.1;background:var(--goldverlauf);-webkit-background-clip:text;background-clip:text;color:transparent}
+.w-text h3{font-size:clamp(30px,3.4vw,40px);margin:8px 0 14px}
+.w-text p{color:var(--grau)}
+.w-text ul{list-style:none;padding:0;margin:18px 0 26px;display:grid;gap:8px}
+.w-text li::before{content:"✦";color:var(--gold);font-size:11px;margin-right:10px}
+@media (max-width:880px){.w-eintrag{grid-template-columns:1fr;gap:34px}.w-eintrag.umgekehrt .w-bild{order:0}.w-bild::before{inset:10px 0 -10px 10px}}
+
+/* Aktions-Kasten */
+.aktionen{background:var(--perl);padding-block:70px 0}
+.aktionen[hidden]{display:none}
+.aktion{display:grid;grid-template-columns:.8fr 1.2fr;background:var(--espresso);color:#EDE4D2;border:1px solid rgba(226,201,140,.45);overflow:hidden;margin-bottom:24px}
+.aktion img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.aktion .a-text{padding:44px 46px;display:flex;flex-direction:column;justify-content:center}
+.aktion .eyebrow{color:var(--gold-hell)}
+.aktion h3{font-size:clamp(30px,3.6vw,44px);color:#fff;margin:10px 0 12px}
+.aktion p{color:#D8CDB8;margin:0 0 18px}
+.aktion .frist{display:inline-block;align-self:flex-start;border:1px solid var(--gold-hell);color:var(--gold-hell);border-radius:999px;padding:7px 16px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
+.aktion .btn{align-self:flex-start}
+@media (max-width:760px){.aktion{grid-template-columns:1fr}.aktion img{max-height:340px}.aktion .a-text{padding:30px 24px}}
+
+/* Goldglanz übers Logo */
+.glanzlogo{position:relative;display:inline-block;line-height:0}
+.glanzlogo i{position:absolute;inset:0;pointer-events:none;-webkit-mask:url(img/logo-web.svg) center/contain no-repeat;mask:url(img/logo-web.svg) center/contain no-repeat;background:linear-gradient(105deg,transparent 0%,transparent 38%,rgba(255,246,214,.95) 48%,rgba(255,255,255,1) 50%,rgba(255,236,170,.95) 52%,transparent 62%,transparent 100%);background-size:260% 100%;background-position:130% 0;animation:goldglanz 6s ease-in-out infinite;animation-delay:1.2s;mix-blend-mode:screen}
+.glanzlogo.gross i{animation-duration:7s;animation-delay:2.5s}
+.glanzlogo img{filter:drop-shadow(0 1px 0 rgba(140,96,20,.25))}
+@keyframes goldglanz{0%{background-position:130% 0}35%{background-position:-30% 0}100%{background-position:-30% 0}}
+.brand:hover .glanzlogo i{animation-duration:1.6s}
+@media (prefers-reduced-motion:reduce){.glanzlogo i{animation:none;display:none}}
 
 /* Versprechen */
 .versprechen{background:var(--espresso);color:#EDE4D2;position:relative;overflow:hidden}
@@ -299,9 +345,9 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#start"><img src="img/logo-web.svg" alt="Logo Sonnencenter Rheidt"><span>Sonnencenter Rheidt</span></a>
+    <a class="brand" href="#start"><img src="img/logo-glanz.svg" alt="Logo Sonnencenter Rheidt"></a>
     <nav class="menu" id="menu" aria-label="Hauptmenü">
-      <a href="#studio">Studio</a><a href="#erster-besuch">Erster Besuch</a><a href="#leistungen">Leistungen</a><a href="#pflege">Pflege</a><a href="#besuch">Öffnungszeiten</a><a href="#fragen">Fragen</a>
+      <a href="#erster-besuch">Erster Besuch</a><a href="#leistungen">Leistungen</a><a href="#wellness">Wellness</a><a href="#pflege">Pflege</a><a href="#besuch">Öffnungszeiten</a><a href="#fragen">Fragen</a>
       <a class="nur-mobil" href="tel:+4922089337181">Anrufen · 02208 9337181</a>
     </nav>
     <a class="btn btn-gold call" href="tel:+4922089337181">02208 9337181</a>
@@ -322,6 +368,10 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
       </div>
       <div class="status" id="status"><i></i><span>Mo–Fr 10–19 · Sa 10–18 · So 10–15 Uhr</span></div>
     </div>
+  </section>
+
+  <section class="aktionen" id="aktionen" hidden aria-label="Aktuelle Aktionen">
+    <div class="wrap" id="aktionsliste"></div>
   </section>
 
   <section class="intro" id="studio">
@@ -363,13 +413,54 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
         <div class="ornament"><span>✦</span></div>
         <p>Vom ersten Sonnenbad bis zur perfekten Maniküre – bei uns bekommst du alles an einem Ort.</p>
       </div>
+      <div class="gruppe-titel"><span>Sonnen &amp; Genießen</span></div>
       <div class="karten">
         <article class="karte"><div class="foto"><img src="img/bank3.jpg" alt="Gepflegte Ergoline-Sonnenbank" loading="lazy"></div><div class="inhalt"><h3>Sonnenbänke</h3><p>Gepflegte Ergoline-Sonnenbänke für jeden Anspruch – vom sanften Einstieg bis zur intensiven Bräune.</p><span class="hinweis">Ohne Termin · mit Beratung</span></div></article>
-        <article class="karte"><div class="foto"><img src="img/naegel.jpg" alt="Nageldesign-Platz mit Farbkarte" loading="lazy"></div><div class="inhalt"><h3>Nageldesign</h3><p>Maniküre und Shellac in großer Farbauswahl – für gepflegte Hände, die lange schön bleiben.</p><span class="hinweis">Montags &amp; donnerstags nach Termin</span></div></article>
-        <article class="karte"><div class="foto"><img src="img/kaffee.jpg" alt="Kaffee in der Lounge des Sonnencenter Rheidt" loading="lazy"></div><div class="inhalt"><h3>Lounge &amp; Kaffee</h3><p>Vor oder nach deinem Termin: Setz dich auf unsere Samtsofas und genieß einen Kaffee – ganz ohne Eile.</p><span class="hinweis">Für alle Gäste</span></div></article>
-        <article class="karte text"><div class="inhalt"><div class="eyebrow">Nach Termin</div><h3>Kosmetische Fußpflege</h3><p>Nägel kürzen und formen, Hornhaut sanft entfernen, pflegen – auf Wunsch mit Shellac.</p><span class="hinweis">Termin unter 02208 9337181</span></div></article>
-        <article class="karte text"><div class="inhalt"><div class="eyebrow" id="presso-label">Neu im Studio</div><h3>Pressotherapie</h3><p>30 Minuten zurücklehnen, während eine Hose mit Luftkammern deine Beine sanft und rhythmisch massiert.</p><span class="hinweis">Wellness-Anwendung, keine medizinische Behandlung</span></div></article>
+        <article class="karte"><div class="foto"><img src="img/lounge-sofas.jpg" alt="Lounge mit grünen Samtsofas, goldenen Kissen und Palme im Fenster" loading="lazy"></div><div class="inhalt"><h3>Lounge &amp; Kaffee</h3><p>Vor oder nach deinem Termin: Setz dich auf unsere Samtsofas und genieß einen Kaffee – ganz ohne Eile.</p><span class="hinweis">Für alle Gäste</span></div></article>
         <article class="karte text"><div class="inhalt"><div class="eyebrow">An der Theke</div><h3>Suncard, Gutscheine &amp; Pflege</h3><p>Die Suncard mit Bonusguthaben, Geschenkgutscheine mit frei wählbarem Betrag und Pflege von seven suns.</p><span class="hinweis">Das Geschenk, das immer passt</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="wellness" id="wellness">
+    <div class="wrap">
+      <div class="kopf center">
+        <div class="eyebrow">Wellness &amp; Schönheit</div>
+        <h2>Gönn dir mehr als <em class="gold">nur Sonne</em></h2>
+        <div class="ornament"><span>✦</span></div>
+        <p>Nageldesign, kosmetische Fußpflege und ab Januar Pressotherapie – alles in unserem Studio in Niederkassel-Rheidt, mit Parkplätzen direkt vor der Tür.</p>
+      </div>
+      <div class="wellness-liste">
+        <article class="w-eintrag">
+          <div class="w-bild"><img src="img/naegel.jpg" alt="Nageldesign-Platz im Sonnencenter Rheidt mit Farbkarte und UV-Lampen" loading="lazy"></div>
+          <div class="w-text">
+            <div class="eyebrow">Montags &amp; donnerstags</div>
+            <h3>Nageldesign</h3>
+            <p>Gepflegte Hände mit Maniküre und Shellac: Wir bringen deine Nägel in Form, pflegen die Nagelhaut und tragen Shellac in deiner Wunschfarbe auf – glänzend, widerstandsfähig und meist zwei bis drei Wochen schön. Große Farbauswahl von klassisch bis Nude.</p>
+            <ul><li>Maniküre</li><li>Shellac in vielen Farben</li><li>Termin nach Vereinbarung</li></ul>
+            <a class="btn btn-gold" href="tel:+4922089337181">Termin anfragen</a>
+          </div>
+        </article>
+        <article class="w-eintrag umgekehrt">
+          <div class="w-bild w-ornament"><span>Kosmetische<br>Fußpflege</span></div>
+          <div class="w-text">
+            <div class="eyebrow">Nach Termin</div>
+            <h3>Kosmetische Fußpflege</h3>
+            <p>Eine wohltuende Auszeit für deine Füße: Nägel kürzen und formen, Hornhaut sanft entfernen, reinigen und pflegen – auf Wunsch mit Shellac für glänzende Fußnägel. Danach fühlen sich deine Füße frisch und gepflegt an.</p>
+            <ul><li>Kosmetische Fußpflege</li><li>Auf Wunsch mit Shellac</li><li>Termin unter 02208 9337181</li></ul>
+            <a class="btn btn-gold" href="tel:+4922089337181">Termin anfragen</a>
+          </div>
+        </article>
+        <article class="w-eintrag">
+          <div class="w-bild w-ornament dunkel"><span>Presso-<br>therapie</span></div>
+          <div class="w-text">
+            <div class="eyebrow" id="presso-label">Neu im Studio</div>
+            <h3>Pressotherapie</h3>
+            <p>30 Minuten zurücklehnen und entspannen: Eine Hose mit Luftkammern massiert deine Beine sanft und rhythmisch. Eine schöne Auszeit nach langem Stehen, Sitzen oder Sport – auch für alle, die nicht zum Sonnen kommen.</p>
+            <ul><li>30 Minuten Wohlfühlzeit</li><li>Auch als Gutschein</li><li>Wellness-Anwendung, keine medizinische Behandlung</li></ul>
+            <a class="btn btn-gold" href="tel:+4922089337181">Mehr erfahren</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -518,7 +609,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
 
 <footer>
   <div class="wrap">
-    <div><img src="img/logo-web.svg" alt="Sonnencenter Rheidt"><div>Dein Sonnenstudio in Niederkassel-Rheidt.<br>Gepflegt, persönlich, entspannt.</div></div>
+    <div><img src="img/logo-glanz.svg" alt="Sonnencenter Rheidt"><div>Dein Sonnenstudio in Niederkassel-Rheidt.<br>Gepflegt, persönlich, entspannt.</div></div>
     <div><h4>Besuch</h4>Marktstraße 33<br>53859 Niederkassel<br><a href="tel:+4922089337181">02208 9337181</a></div>
     <div><h4>Folge uns</h4><a href="https://www.instagram.com/sonnencenter.rheidt" target="_blank" rel="noopener">Instagram</a><br><a href="https://g.page/r/CUCSYFHP8uU-EBM/review" target="_blank" rel="noopener">Google-Bewertungen</a></div>
     <div class="unten"><span>© <span id="jahr">2026</span> Sonnencenter Rheidt</span><span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></div>
@@ -588,6 +679,17 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
     if(sonder[heute]) txt += " ("+sonder[heute].name+")";
     statusEl.querySelector("span").textContent = txt || "";
     if(!offen) statusEl.classList.add("zu");
+  }
+
+  /* Aktions-Kästen */
+  var ak=(S.aktionen||[]).filter(function(a){ return heute>=a.von && heute<=a.bis; });
+  var aSec=document.getElementById("aktionen"), aL=document.getElementById("aktionsliste");
+  if(aSec&&aL&&ak.length){
+    aL.innerHTML=ak.map(function(a){
+      var b=a.bis.split("-");
+      return '<article class="aktion"><img src="'+esc(a.bild)+'" alt="'+esc(a.bildtext||a.titel)+'" loading="lazy"><div class="a-text"><div class="eyebrow">'+esc(a.kicker||"Aktion")+'</div><h3>'+esc(a.titel)+'</h3><p>'+esc(a.text)+'</p><span class="frist">'+esc(a.frist||("Nur bis "+b[2]+"."+b[1]+"."))+'</span><a class="btn btn-gold" href="tel:+4922089337181">'+esc(a.knopf||"Jetzt anrufen")+'</a></div></article>';
+    }).join("");
+    aSec.hidden=false;
   }
 
   /* Menü am Handy */

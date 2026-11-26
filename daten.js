@@ -32,6 +32,17 @@ window.STUDIO = {
     { von: "2026-12-10", bis: "2027-01-31", text: "Neu ab 02.01.2027: Pressotherapie – 30 Minuten Wohlfühlzeit für deine Beine" }
   ],
 
+  /* Große Aktions-Kästen unter dem Startbild – erscheinen nur im Zeitraum von/bis.
+     Preise nur bei freigegebenen Suncard-Aktionen. */
+  aktionen: [
+    { von: "2026-12-04", bis: "2026-12-24", kicker: "Nur bis Heiligabend", titel: "Christmas Suncard",
+      text: "Lade deine Suncard auf und bekomm 11 € Sonne geschenkt – für dich selbst oder als Weihnachtsgeschenk. Gültig für alle Sonnenbänke, erhältlich direkt bei uns im Studio.",
+      frist: "04.12. – 24.12.", bild: "img/aktion-christmas-suncard.jpg", bildtext: "Christmas Suncard im Sonnencenter Rheidt", knopf: "Fragen? Ruf uns an" },
+    { von: "2026-11-26", bis: "2026-12-24", kicker: "Geschenkidee", titel: "Sonne verschenken",
+      text: "Ein Gutschein vom Sonnencenter Rheidt passt immer: Betrag frei wählen, einlösbar für Besonnung, Nageldesign, Fußpflege oder Pflegeprodukte. Direkt bei uns an der Theke.",
+      frist: "Heiligabend bis 15 Uhr geöffnet", bild: "img/aktion-gutscheine.jpg", bildtext: "Geschenkgutschein des Sonnencenter Rheidt am Weihnachtsbaum", knopf: "Jetzt anrufen" }
+  ],
+
   /* Wenn gerade keine Aktion läuft */
   laufschrift_standard: [
     "Sonnen ohne Termin – einfach vorbeikommen",
