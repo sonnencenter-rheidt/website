@@ -203,8 +203,26 @@ section{padding-block:110px}
 .brand:hover .glanzlogo i{animation-duration:1.6s}
 @media (prefers-reduced-motion:reduce){.glanzlogo i{animation:none;display:none}}
 
-/* Versprechen */
-.versprechen{background:var(--espresso);color:#EDE4D2;position:relative;overflow:hidden}
+/* Untermenü Wellness */
+.unter{position:relative}
+.unter-kopf::before{content:"";}
+.unter-kopf{padding-right:14px !important}
+.unter-kopf::after{content:"" !important;position:absolute !important;right:0;top:50%;left:auto !important;bottom:auto !important;width:6px !important;height:6px !important;border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);background:none !important;transform:translateY(-70%) rotate(45deg) !important}
+.unter-liste{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:320px;background:var(--perl);border:1px solid var(--linie);border-top:2px solid var(--gold);box-shadow:0 22px 40px -24px rgba(42,34,25,.55);padding:10px 0;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;margin-top:14px;white-space:normal;z-index:40}
+.unter-liste::before{content:"";position:absolute;left:0;right:0;top:-18px;height:18px}
+.unter:hover .unter-liste,.unter:focus-within .unter-liste{opacity:1;visibility:visible}
+.unter-liste a{display:block;padding:12px 22px !important;text-transform:none;letter-spacing:0}
+.unter-liste a::after{display:none}
+.unter-liste a:hover{background:var(--creme)}
+.unter-liste b{display:block;font-family:var(--display);font-weight:400;font-size:18px;color:var(--tinte)}
+.unter-liste small{display:block;font-size:12.5px;color:var(--grau);margin-top:2px}
+@media (max-width:1180px){
+  .unter-kopf::after{display:none !important}
+  .unter-liste{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:0;border-left:2px solid var(--gold-hell);margin:0 0 6px;padding:0;min-width:0;background:none}
+  .unter-liste a{padding:12px 0 12px 16px !important;border-bottom:1px solid var(--linie)}
+  .unter-liste b{font-size:17px}
+}
+/* Versprechen */.versprechen{background:var(--espresso);color:#EDE4D2;position:relative;overflow:hidden}
 .versprechen::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 85% 20%,rgba(201,162,79,.16),transparent 70%)}
 .versprechen .wrap{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:72px;align-items:center}
 .versprechen h2{color:#fff}
@@ -347,7 +365,15 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
   <div class="wrap">
     <a class="brand" href="#start"><img src="img/logo-glanz.svg" alt="Logo Sonnencenter Rheidt"></a>
     <nav class="menu" id="menu" aria-label="Hauptmenü">
-      <a href="#erster-besuch">Erster Besuch</a><a href="#leistungen">Leistungen</a><a href="#wellness">Wellness</a><a href="#pflege">Pflege</a><a href="#besuch">Öffnungszeiten</a><a href="#fragen">Fragen</a>
+      <a href="#erster-besuch">Erster Besuch</a><a href="#leistungen">Sonnen</a>
+      <div class="unter"><a href="#wellness" class="unter-kopf" aria-haspopup="true">Wellness &amp; Schönheit</a>
+        <div class="unter-liste">
+          <a href="#naegel"><b>Nageldesign</b><small>Maniküre &amp; Shellac · Mo &amp; Do nach Termin</small></a>
+          <a href="#fusspflege"><b>Kosmetische Fußpflege</b><small>Gepflegte Füße, auf Wunsch mit Shellac</small></a>
+          <a href="#pressotherapie"><b>Pressotherapie</b><small>30 Min. Wohlfühlzeit für die Beine · ab 02.01.2027</small></a>
+        </div>
+      </div>
+      <a href="#pflege">Pflege</a><a href="#besuch">Öffnungszeiten</a><a href="#fragen">Fragen</a>
       <a class="nur-mobil" href="tel:+4922089337181">Anrufen · 02208 9337181</a>
     </nav>
     <a class="btn btn-gold call" href="tel:+4922089337181">02208 9337181</a>
@@ -431,7 +457,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
         <p>Nageldesign, kosmetische Fußpflege und ab Januar Pressotherapie – alles in unserem Studio in Niederkassel-Rheidt, mit Parkplätzen direkt vor der Tür.</p>
       </div>
       <div class="wellness-liste">
-        <article class="w-eintrag">
+        <article class="w-eintrag" id="naegel">
           <div class="w-bild"><img src="img/naegel.jpg" alt="Nageldesign-Platz im Sonnencenter Rheidt mit Farbkarte und UV-Lampen" loading="lazy"></div>
           <div class="w-text">
             <div class="eyebrow">Montags &amp; donnerstags</div>
@@ -441,7 +467,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
             <a class="btn btn-gold" href="tel:+4922089337181">Termin anfragen</a>
           </div>
         </article>
-        <article class="w-eintrag umgekehrt">
+        <article class="w-eintrag umgekehrt" id="fusspflege">
           <div class="w-bild w-ornament"><span>Kosmetische<br>Fußpflege</span></div>
           <div class="w-text">
             <div class="eyebrow">Nach Termin</div>
@@ -451,7 +477,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
             <a class="btn btn-gold" href="tel:+4922089337181">Termin anfragen</a>
           </div>
         </article>
-        <article class="w-eintrag">
+        <article class="w-eintrag" id="pressotherapie">
           <div class="w-bild w-ornament dunkel"><span>Presso-<br>therapie</span></div>
           <div class="w-text">
             <div class="eyebrow" id="presso-label">Neu im Studio</div>
