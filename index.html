@@ -83,7 +83,23 @@ nav.menu a{text-decoration:none;color:var(--grau);position:relative;padding:6px 
 nav.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
 nav.menu a:hover{color:var(--tinte)}nav.menu a:hover::after{transform:scaleX(1)}
 .top .call{padding:12px 20px}
-@media (max-width:960px){nav.menu{display:none}}
+.menuknopf{display:none;align-items:center;gap:5px;flex-direction:column;justify-content:center;background:none;border:1px solid var(--gold);border-radius:999px;padding:10px 16px;cursor:pointer;color:var(--gold-tief)}
+.menuknopf span{display:block;width:20px;height:1.5px;background:var(--gold-tief);transition:transform .3s,opacity .3s}
+.menuknopf b{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-top:2px}
+.menuknopf[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.menuknopf[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menuknopf[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nur-mobil{display:none}
+section[id],main[id]{scroll-margin-top:110px}
+@media (max-width:1100px){nav.menu{gap:20px}}
+@media (max-width:960px){
+  .menuknopf{display:flex}
+  nav.menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--perl);border-bottom:1px solid var(--gold);box-shadow:0 18px 30px -20px rgba(42,34,25,.5);padding:8px max(22px,env(safe-area-inset-left)) 18px}
+  nav.menu.offen{display:flex}
+  nav.menu a{padding:16px 0;border-bottom:1px solid var(--linie);font-size:13px;color:var(--tinte)}
+  nav.menu a::after{display:none}
+  nav.menu .nur-mobil{display:block;color:var(--gold-tief);font-weight:600;border-bottom:0}
+}
 @media (max-width:520px){.brand span{display:none}}
 
 /* Hero */
@@ -284,10 +300,12 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#start"><img src="img/logo-web.svg" alt="Logo Sonnencenter Rheidt"><span>Sonnencenter Rheidt</span></a>
-    <nav class="menu" aria-label="Hauptmenü">
-      <a href="#studio">Studio</a><a href="#leistungen">Leistungen</a><a href="#pflege">Pflege</a><a href="#besuch">Öffnungszeiten</a><a href="#fragen">Fragen</a>
+    <nav class="menu" id="menu" aria-label="Hauptmenü">
+      <a href="#studio">Studio</a><a href="#erster-besuch">Erster Besuch</a><a href="#leistungen">Leistungen</a><a href="#pflege">Pflege</a><a href="#besuch">Öffnungszeiten</a><a href="#fragen">Fragen</a>
+      <a class="nur-mobil" href="tel:+4922089337181">Anrufen · 02208 9337181</a>
     </nav>
     <a class="btn btn-gold call" href="tel:+4922089337181">02208 9337181</a>
+    <button class="menuknopf" id="menuknopf" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span><b>Menü</b></button>
   </div>
 </header>
 
@@ -570,6 +588,13 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
     if(sonder[heute]) txt += " ("+sonder[heute].name+")";
     statusEl.querySelector("span").textContent = txt || "";
     if(!offen) statusEl.classList.add("zu");
+  }
+
+  /* Menü am Handy */
+  var mk=document.getElementById("menuknopf"), mn=document.getElementById("menu");
+  if(mk&&mn){
+    mk.addEventListener("click",function(){ var auf=mn.classList.toggle("offen"); mk.setAttribute("aria-expanded",auf); });
+    mn.querySelectorAll("a").forEach(function(a){ a.addEventListener("click",function(){ mn.classList.remove("offen"); mk.setAttribute("aria-expanded","false"); }); });
   }
 
   /* Studiofilm: startet erst, wenn sichtbar; bei „weniger Bewegung“ nur Standbild */
