@@ -7,7 +7,7 @@
 <meta name="description" content="Sonnenstudio in Niederkassel-Rheidt: gepflegte Ergoline-Sonnenbänke ohne Termin, persönliche Beratung, Nageldesign, kosmetische Fußpflege und Lounge mit Kaffee. Marktstraße 33, Parken vor der Tür. Tel. 02208 9337181.">
 <link rel="canonical" href="https://sonnencenter-rheidt.de/">
 <link rel="icon" href="img/logo-web.svg" type="image/svg+xml">
-<meta name="theme-color" content="#2A2219">
+<meta name="theme-color" content="#1D3A33">
 <meta property="og:title" content="Sonnencenter Rheidt – Dein Sonnenstudio in Niederkassel">
 <meta property="og:description" content="Ergoline-Sonnenbänke ohne Termin, Beratung, Nägel, Fußpflege und Lounge. Marktstraße 33, Niederkassel-Rheidt.">
 <meta property="og:image" content="https://sonnencenter-rheidt.de/img/lounge.jpg">
@@ -25,6 +25,7 @@
 {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"15:00"}],
 "sameAs":["https://www.instagram.com/sonnencenter.rheidt"]}
 </script>
+<script>try{if("scrollRestoration" in history)history.scrollRestoration="manual";addEventListener("load",function(){if(!location.hash)scrollTo(0,0);});}catch(e){}</script>
 <script src="daten.js"></script>
 <style>
 /* Layout: ruhiger Weiß-Gold-Auftritt – Laufschrift oben, Vollbild-Hero mit Goldrahmen, Karten mit Haarlinien, dunkles Versprechen-Band, Besuch mit Live-Zeiten */
@@ -91,7 +92,7 @@ nav.menu a:hover{color:var(--tinte)}nav.menu a:hover::after{transform:scaleX(1)}
 .menuknopf[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 .nur-mobil{display:none}.mobil-extra{display:none}
 section[id],main[id]{scroll-margin-top:130px}
-@media (max-width:1360px){
+@media (max-width:1024px){
   .top .call{margin-left:auto}
   .menuknopf{display:flex}
   nav.menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--perl);border-bottom:1px solid var(--gold);box-shadow:0 18px 30px -20px rgba(42,34,25,.5);padding:8px max(22px,env(safe-area-inset-left)) 18px}
@@ -357,23 +358,122 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
   footer{padding-bottom:120px}
   .top .call{display:none}
 }
-</style>
+
+/* ===== Modern-Schicht 27.11.: Weiß · Gold · Samtgrün (Sascha: „modern, weiß gold edel“) ===== */
+:root{
+  --weiss:#FFFFFF; --perl:#FFFFFF; --creme:#F8F6F1; --sand:#EFEBE2;
+  --gold:#B08A3E; --gold-hell:#E3CB8F; --gold-tief:#8A6A27;
+  --espresso:#1D3A33; --samt:#1D3A33; --tinte:#1E1F1D; --grau:#686A66; --linie:#ECE6D8;
+  --goldverlauf:linear-gradient(100deg,#A07C33 0%,#CFAE66 45%,#E9D49C 55%,#CFAE66 70%,#A07C33 100%);
+  --display:"Century Gothic","Avenir Next","Avenir","Futura","Segoe UI",Arial,sans-serif;
+}
+h1,h2,h3{font-weight:400;letter-spacing:-.01em;line-height:1.12}
+h2{font-size:clamp(30px,3.8vw,48px)}
+em.gold,.w-ornament span,.liste b,.zitate blockquote p{font-style:normal}
+.eyebrow{letter-spacing:.2em}
+.ornament span{display:none}
+.ornament::before{width:56px;height:2px;background:var(--gold)}
+.ornament::after{display:none}
+.punkte li::before,.w-text li::before,.vk-text li::before{content:"";display:inline-block;flex:none;width:6px;height:6px;border-radius:50%;background:var(--gold);margin:0 12px 2px 0;vertical-align:middle}
+.ticker span::after{content:"·";margin-left:40px}
+.hero::after{display:none}
+.hero::before{background:linear-gradient(90deg,rgba(14,30,26,.82) 0%,rgba(14,30,26,.55) 45%,rgba(14,30,26,.1) 100%)}
+.hero h1{font-size:clamp(42px,6.4vw,84px)}
+.hero em.gold,.cta em.gold{color:#EBD39A}
+.rahmenbild::before,.w-bild::before{display:none}
+.rahmenbild img,.w-bild img,.w-ornament,.vk,.regal figure,.aktion,.filmrahmen,.filmrahmen video,.parkfilm video,.duo img,.infobox{border-radius:14px;overflow:hidden}
+.filmrahmen{border:0;padding:0;box-shadow:0 30px 60px -40px rgba(29,58,51,.6)}
+.vk{border:1px solid var(--linie);box-shadow:0 24px 50px -38px rgba(29,58,51,.45)}
+.btn-gold{box-shadow:0 12px 28px -16px rgba(138,106,39,.7)}/* Struktur 27.11.: gleiche Karten überall */
+.drei-karten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+@media (max-width:980px){.drei-karten{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.drei-karten{grid-template-columns:1fr}}
+.vk-feld{aspect-ratio:4/3;display:grid;place-items:center;background:var(--samt)}
+.vk-feld span{font-family:var(--display);font-size:clamp(28px,2.6vw,36px);background:var(--goldverlauf);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vk-feld.gold{background:radial-gradient(90% 90% at 70% 20%,#2A5249,#1D3A33 70%)}
+.vorteile{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.vorteile div{background:var(--creme);border-radius:14px;padding:18px 20px}
+.vorteile b{display:block;font-family:var(--display);font-weight:400;font-size:20px;color:var(--gold-tief)}
+.vorteile span{font-size:15px;color:var(--grau);line-height:1.5}
+@media (max-width:520px){.vorteile{grid-template-columns:1fr}}
+.tipps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 40px}
+.tipps div{background:var(--creme);border-radius:14px;padding:20px 22px;border-top:2px solid var(--gold)}
+.tipps b{display:block;font-family:var(--display);font-weight:400;font-size:19px;margin-bottom:4px}
+.tipps span{font-size:15px;color:var(--grau);line-height:1.5}
+@media (max-width:760px){.tipps{grid-template-columns:1fr}}
+.regal{gap:16px}
+.regal figure{padding:14px 14px 18px;border-radius:14px}
+.regal b{font-size:19px}
+.regal p{font-size:14px;line-height:1.5}
+section{padding-block:clamp(64px,8vw,104px)}/* Handy: Karten als Wisch-Reihe */
+@media (max-width:640px){
+  .drei-karten,.regal,.zwei-karten{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:-22px;padding:4px 22px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .regal{grid-auto-columns:62%}
+  .drei-karten::-webkit-scrollbar,.regal::-webkit-scrollbar,.zwei-karten::-webkit-scrollbar{display:none}
+  .drei-karten>*,.regal>*,.zwei-karten>*{scroll-snap-align:start}
+  .wisch-hinweis{display:block}
+}
+.wisch-hinweis{display:none;text-align:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-tief);margin-top:4px}/* Kopfzeile 27.11.: Logo mittig, schrumpft beim Scrollen */
+header.top{background:rgba(255,255,255,.96)}
+.top .wrap.kopf-reihe{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:122px;gap:16px;transition:height .35s ease}
+.kopf-links{justify-self:start;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--grau);text-decoration:none;white-space:nowrap}
+.kopf-links:hover{color:var(--gold-tief)}
+.kopf-rechts{justify-self:end;display:flex;gap:12px;align-items:center}
+.brand{justify-self:center}
+.brand img{height:100px;transition:height .35s ease}
+.top .call{margin-left:0}
+.nav-reihe{border-top:1px solid var(--linie)}
+.nav-reihe nav.menu{justify-content:center;padding:13px 22px;gap:30px}
+header.top.klein .kopf-reihe{height:76px}
+header.top.klein .brand img{height:58px}
+@media (max-width:1024px){
+  .nav-reihe{border:0}
+  .nav-reihe nav.menu{padding:8px max(22px,env(safe-area-inset-left)) 18px;gap:0}
+  .kopf-links{visibility:hidden;overflow:hidden;min-width:0;width:0}
+  .top .wrap.kopf-reihe{height:96px}
+  .brand img{height:74px}
+  header.top.klein .kopf-reihe{height:70px}
+  header.top.klein .brand img{height:52px}
+}
+
+/* Rein weiß */
+:root{--creme:#FFFFFF;--sand:#FFFFFF;--perl:#FFFFFF}
+.vorteile div,.tipps div,.regal figure.tipp{border:1px solid var(--linie)}
+.tipps div{border-top:2px solid var(--gold)}
+main>section+section:not(.cta){border-top:1px solid var(--linie)}
+section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024px){section[id],main[id],article[id]{scroll-margin-top:90px}}/* Kopfzeile v2: symmetrisch */
+.menuknopf{grid-column:1;grid-row:1;justify-self:start;border:0;padding:8px 4px;background:none}
+.tel-icon{width:16px;height:16px;flex:none}
+@media (max-width:1024px){
+  .kopf-links{display:none}
+  .brand{grid-column:2}
+  .kopf-rechts{grid-column:3}
+  .top .call{display:inline-flex;width:50px;height:50px;padding:0;border-radius:50%}
+  .top .call .tel-text{display:none}
+  .tel-icon{width:20px;height:20px}
+  header.top.klein .top .call,header.top.klein .call{width:42px;height:42px}
+}</style>
 </head>
 <body>
 
 <div class="ticker" aria-label="Aktuelles"><div class="band" id="band"></div></div>
 
-<header class="top">
-  <div class="wrap">
+<header class="top" id="kopf">
+  <div class="wrap kopf-reihe">
+    <a class="kopf-links" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sonnencenter+Rheidt+Marktstra%C3%9Fe+33+53859+Niederkassel" target="_blank" rel="noopener">Marktstraße 33 · Rheidt</a>
+    <button class="menuknopf" id="menuknopf" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span><b>Menü</b></button>
     <a class="brand" href="#start"><img src="img/logo-glanz.svg" alt="Logo Sonnencenter Rheidt"></a>
+    <div class="kopf-rechts">
+      <a class="btn btn-gold call" href="tel:+4922089337181" aria-label="Anrufen: 02208 9337181"><svg class="tel-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span class="tel-text">02208 9337181</span></a>
+    </div>
+  </div>
+  <div class="nav-reihe">
     <nav class="menu" id="menu" aria-label="Hauptmenü">
       <a class="mobil-extra" href="#erster-besuch">Erster Besuch</a><a href="#leistungen">Sonnen</a>
       <a href="#suncard">Suncard</a><a href="#gutscheine">Gutscheine</a><a href="#naegel">Nägel</a><a href="#fusspflege">Fußpflege</a><a href="#pressotherapie">Pressotherapie</a>
       <a href="#pflege">Pflege</a><a href="#besuch">Öffnungszeiten</a><a class="mobil-extra" href="#fragen">Fragen</a>
       <a class="nur-mobil" href="tel:+4922089337181">Anrufen · 02208 9337181</a>
     </nav>
-    <a class="btn btn-gold call" href="tel:+4922089337181">02208 9337181</a>
-    <button class="menuknopf" id="menuknopf" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span><b>Menü</b></button>
   </div>
 </header>
 
@@ -403,12 +503,12 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
         <h2>Gepflegt, persönlich, <em class="gold">entspannt.</em></h2>
         <div class="ornament"><span>✦</span></div>
         <p>Im Sonnencenter Rheidt nehmen wir uns Zeit für dich. Du kommst zum ersten Mal? Wir beraten dich persönlich zu Bank und Besonnungszeit und finden gemeinsam den passenden Einstieg. Danach wartet ein Kaffee in der Lounge.</p>
-        <ul class="punkte">
-          <li>Jede Bank wird nach jeder Besonnung desinfiziert und gereinigt</li>
-          <li>Klimatisiertes Studio und Lounge mit Kaffee</li>
-          <li>Eigene Kundenparkplätze direkt vor der Tür</li>
-          <li>Nageldesign, kosmetische Fußpflege und Pflege unter einem Dach</li>
-        </ul>
+        <div class="vorteile">
+          <div><b>Beratung</b><span>Persönlich zu Hauttyp, Bank und Besonnungszeit</span></div>
+          <div><b>Sauberkeit</b><span>Jede Bank wird nach jeder Besonnung gereinigt</span></div>
+          <div><b>Spontan</b><span>Kein Termin nötig – einfach vorbeikommen</span></div>
+          <div><b>Bequem</b><span>Eigene Parkplätze direkt vor der Tür</span></div>
+        </div>
       </div>
       <div class="rahmenbild"><img src="img/empfang.jpg" alt="Empfang mit Theke, Taschenregal und Lounge-Sesseln im Sonnencenter Rheidt" loading="lazy"></div>
     </div>
@@ -430,17 +530,56 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
   <section class="leistungen" id="leistungen">
     <div class="wrap">
       <div class="kopf center">
-        <div class="eyebrow">Leistungen</div>
+        <div class="eyebrow gross">Unsere Leistungen</div>
         <h2>Alles für dein <em class="gold">Wohlgefühl</em></h2>
         <div class="ornament"><span>✦</span></div>
-        <p>Vom ersten Sonnenbad bis zur perfekten Maniküre – bei uns bekommst du alles an einem Ort.</p>
+        <p>Sonne, Nägel, Fußpflege und ab Januar Pressotherapie – alles an einem Ort in Niederkassel-Rheidt.</p>
       </div>
-      <div class="gruppe-titel"><span>Sonnen &amp; Genießen</span></div>
-      <div class="karten">
-        <article class="karte"><div class="foto"><img src="img/bank3.jpg" alt="Gepflegte Ergoline-Sonnenbank" loading="lazy"></div><div class="inhalt"><h3>Sonnenbänke</h3><p>Gepflegte Ergoline-Sonnenbänke für jeden Anspruch – vom sanften Einstieg bis zur intensiven Bräune.</p><span class="hinweis">Ohne Termin · mit Beratung</span></div></article>
-        <article class="karte"><div class="foto"><img src="img/lounge-sofas.jpg" alt="Lounge mit grünen Samtsofas, goldenen Kissen und Palme im Fenster" loading="lazy"></div><div class="inhalt"><h3>Lounge &amp; Kaffee</h3><p>Vor oder nach deinem Termin: Setz dich auf unsere Samtsofas und genieß einen Kaffee – ganz ohne Eile.</p><span class="hinweis">Für alle Gäste</span></div></article>
-        <article class="karte text"><div class="inhalt"><div class="eyebrow">An der Theke</div><h3>Suncard, Gutscheine &amp; Pflege</h3><p>Die Suncard mit dauerhaft 10 % mehr Guthaben, Gutscheine für alle Leistungen und Pflege von seven suns. <a href="#suncard">Mehr zur Suncard</a></p><span class="hinweis">Das Geschenk, das immer passt</span></div></article>
+      <div class="drei-karten">
+        <article class="vk" id="sonnen">
+          <img src="img/bank-roehren.jpg" alt="Sonnenbank mit leuchtenden Röhren im Sonnencenter Rheidt" loading="lazy">
+          <div class="vk-text"><div class="eyebrow">Ohne Termin</div><h3>Sonnenbänke</h3>
+            <p>Gepflegte Ergoline-Bänke – vom sanften Einstieg bis zur intensiven Bräune.</p>
+            <ul><li>Persönliche Beratung</li><li>Nach jeder Besonnung gereinigt</li><li>Klimatisiertes Studio</li></ul>
+            <a class="btn btn-gold" href="tel:+4922089337181">Fragen? Anrufen</a></div>
+        </article>
+        <article class="vk" id="naegel">
+          <img src="img/naegel.jpg" alt="Nageldesign-Platz im Sonnencenter Rheidt mit Farbkarte und UV-Lampen" loading="lazy">
+          <div class="vk-text"><div class="eyebrow">Mo &amp; Do nach Termin</div><h3>Nageldesign</h3>
+            <p>Maniküre und Shellac in deiner Wunschfarbe – glänzend und widerstandsfähig.</p>
+            <ul><li>Maniküre</li><li>Shellac in vielen Farben</li><li>Termin nach Vereinbarung</li></ul>
+            <a class="btn btn-gold" href="tel:+4922089337181">Termin anfragen</a></div>
+        </article>
+        <article class="vk" id="fusspflege">
+          <div class="vk-feld"><span>Fußpflege</span></div>
+          <div class="vk-text"><div class="eyebrow">Nach Termin</div><h3>Kosmetische Fußpflege</h3>
+            <p>Eine wohltuende Auszeit für deine Füße – gepflegt, frisch und auf Wunsch mit Shellac.</p>
+            <ul><li>Nägel kürzen und formen</li><li>Hornhaut sanft entfernen</li><li>Auf Wunsch mit Shellac</li></ul>
+            <a class="btn btn-gold" href="tel:+4922089337181">Termin anfragen</a></div>
+        </article>
+        <article class="vk" id="pressotherapie">
+          <div class="vk-feld gold"><span>Pressotherapie</span></div>
+          <div class="vk-text"><div class="eyebrow" id="presso-label">Neu im Studio</div><h3>Pressotherapie</h3>
+            <p>30 Minuten zurücklehnen: Luftkammern massieren deine Beine sanft und rhythmisch.</p>
+            <ul><li>30 Minuten Wohlfühlzeit</li><li>Auch als Gutschein</li><li>Wellness-Anwendung, keine medizinische Behandlung</li></ul>
+            <a class="btn btn-gold" href="tel:+4922089337181">Mehr erfahren</a></div>
+        </article>
+        <article class="vk">
+          <img src="img/lounge-sofas.jpg" alt="Lounge mit grünen Samtsofas, goldenen Kissen und Palme im Fenster" loading="lazy">
+          <div class="vk-text"><div class="eyebrow">Für alle Gäste</div><h3>Lounge &amp; Kaffee</h3>
+            <p>Vor oder nach deinem Besuch: Setz dich auf unsere Samtsofas und genieß einen Kaffee.</p>
+            <ul><li>Samtsofas zum Ankommen</li><li>Kaffee ohne Eile</li><li>Parken direkt vor der Tür</li></ul>
+            <a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sonnencenter+Rheidt+Marktstra%C3%9Fe+33+53859+Niederkassel" target="_blank" rel="noopener">Route planen</a></div>
+        </article>
+        <article class="vk">
+          <img src="img/7suns-alle.jpg" alt="Alle seven suns Pflegeprodukte im Sonnencenter Rheidt: Bronzer, Beschleuniger, Gesichtspflege, After-Tan und Ampulle" loading="lazy">
+          <div class="vk-text"><div class="eyebrow">seven suns</div><h3>Pflege &amp; Bronzer</h3>
+            <p>Hochwertige Solarium-Kosmetik – wir finden mit dir das passende Produkt.</p>
+            <ul><li>Beschleuniger und Bronzer</li><li>After-Tan-Pflege</li><li>Auch fürs Gesicht</li></ul>
+            <a class="btn btn-gold" href="#pflege">Produkte ansehen</a></div>
+        </article>
       </div>
+      <div class="wisch-hinweis">← wischen →</div>
     </div>
   </section>
 
@@ -473,71 +612,12 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
           </div>
         </article>
       </div>
+      <div class="wisch-hinweis">← wischen →</div>
     </div>
   </section>
-  <section class="wellness" id="wellness">
-    <div class="wrap">
-      <div class="kopf center">
-        <div class="eyebrow gross">Nägel · Fußpflege · Pressotherapie</div>
-        <h2>Gönn dir mehr als <em class="gold">nur Sonne</em></h2>
-        <div class="ornament"><span>✦</span></div>
-        <p>Nageldesign, kosmetische Fußpflege und ab Januar Pressotherapie – alles in unserem Studio in Niederkassel-Rheidt, mit Parkplätzen direkt vor der Tür.</p>
-      </div>
-      <div class="wellness-liste">
-        <article class="w-eintrag" id="naegel">
-          <div class="w-bild"><img src="img/naegel.jpg" alt="Nageldesign-Platz im Sonnencenter Rheidt mit Farbkarte und UV-Lampen" loading="lazy"></div>
-          <div class="w-text">
-            <div class="eyebrow">Montags &amp; donnerstags</div>
-            <h3>Nageldesign</h3>
-            <p>Gepflegte Hände mit Maniküre und Shellac: Wir bringen deine Nägel in Form, pflegen die Nagelhaut und tragen Shellac in deiner Wunschfarbe auf – glänzend, widerstandsfähig und meist zwei bis drei Wochen schön. Große Farbauswahl von klassisch bis Nude.</p>
-            <ul><li>Maniküre</li><li>Shellac in vielen Farben</li><li>Termin nach Vereinbarung</li></ul>
-            <a class="btn btn-gold" href="tel:+4922089337181">Termin anfragen</a>
-          </div>
-        </article>
-        <article class="w-eintrag umgekehrt" id="fusspflege">
-          <div class="w-bild w-ornament"><span>Kosmetische<br>Fußpflege</span></div>
-          <div class="w-text">
-            <div class="eyebrow">Nach Termin</div>
-            <h3>Kosmetische Fußpflege</h3>
-            <p>Eine wohltuende Auszeit für deine Füße: Nägel kürzen und formen, Hornhaut sanft entfernen, reinigen und pflegen – auf Wunsch mit Shellac für glänzende Fußnägel. Danach fühlen sich deine Füße frisch und gepflegt an.</p>
-            <ul><li>Kosmetische Fußpflege</li><li>Auf Wunsch mit Shellac</li><li>Termin unter 02208 9337181</li></ul>
-            <a class="btn btn-gold" href="tel:+4922089337181">Termin anfragen</a>
-          </div>
-        </article>
-        <article class="w-eintrag" id="pressotherapie">
-          <div class="w-bild w-ornament dunkel"><span class="einwort">Pressotherapie</span></div>
-          <div class="w-text">
-            <div class="eyebrow" id="presso-label">Neu im Studio</div>
-            <h3>Pressotherapie</h3>
-            <p>30 Minuten zurücklehnen und entspannen: Eine Hose mit Luftkammern massiert deine Beine sanft und rhythmisch. Eine schöne Auszeit nach langem Stehen, Sitzen oder Sport – auch für alle, die nicht zum Sonnen kommen.</p>
-            <ul><li>30 Minuten Wohlfühlzeit</li><li>Auch als Gutschein</li><li>Wellness-Anwendung, keine medizinische Behandlung</li></ul>
-            <a class="btn btn-gold" href="tel:+4922089337181">Mehr erfahren</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+  
 
-  <section class="versprechen">
-    <div class="wrap">
-      <div>
-        <div class="eyebrow" style="color:var(--gold-hell)">Unser Versprechen</div>
-        <h2>Sonne, die sich <em class="gold">gut anfühlt.</em></h2>
-        <div class="ornament"><span>✦</span></div>
-        <p>Ob du zum ersten Mal kommst oder Stammgast bist: Bei uns bekommst du die passende Ergoline-Bank und eine ehrliche Beratung.</p>
-        <div class="liste">
-          <div><b>Beratung</b><span>Persönlich zu Hauttyp, Bank und Besonnungszeit</span></div>
-          <div><b>Sauberkeit</b><span>Jede Bank wird nach jeder Besonnung gereinigt</span></div>
-          <div><b>Spontan</b><span>Kein Termin nötig – einfach vorbeikommen</span></div>
-          <div><b>Bequem</b><span>Parkplätze direkt vor der Tür</span></div>
-        </div>
-      </div>
-      <div class="duo">
-        <img src="img/bank-roehren.jpg" alt="Sonnenbank mit leuchtenden Röhren im Sonnencenter Rheidt" loading="lazy">
-        <img src="img/bank1.jpg" alt="Gereinigte Liegefläche mit Schild it's clean" loading="lazy">
-      </div>
-    </div>
-  </section>
+  
 
   <section class="film">
     <div class="wrap">
@@ -552,44 +632,31 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
     <div class="wrap">
       <div class="center kopf"><div class="eyebrow">Pflege von seven suns</div><h2>Schön gepflegt <em class="gold">vor und nach dem Sonnen</em></h2><div class="ornament"><span>✦</span></div>
         <p>Hochwertige Pflege von seven suns – direkt bei uns im Studio. Wir beraten dich gern, welches Produkt zu deiner Haut passt.</p></div>
-      <div class="warum">
-        <div class="warum-kopf"><h3>Warum Pflege beim Sonnen so wichtig ist</h3><p>Wärme und Licht entziehen der Haut Feuchtigkeit. Gut gepflegte Haut fühlt sich angenehmer an – und deine Bräune wirkt gleichmäßiger und bleibt länger schön.</p></div>
-        <div class="warum-grid">
-          <div><span class="nr">Vor &amp; während</span><b>Feuchtigkeit für ein schönes Ergebnis</b><p>Spezielle Solarium-Kosmetik wie Beschleuniger oder Bronzer versorgt deine Haut mit Feuchtigkeit und unterstützt ein gleichmäßiges Bräunungsergebnis. Für die Sonnenbank gemacht – normale Bodylotion und Öle gehören nicht auf die Acrylscheibe.</p></div>
-          <div><span class="nr">Danach</span><b>After-Tan für ein gepflegtes Hautgefühl</b><p>Eine After-Tan-Lotion gibt der Haut nach dem Sonnen Feuchtigkeit zurück. So fühlt sie sich geschmeidig an und deine Bräune sieht länger frisch aus.</p></div>
-          <div><span class="nr">Unsere Tipps</span><b>So holst du mehr aus jeder Besonnung</b><p>Haut vorher reinigen und Make-up entfernen. Bei Bronzern mit Spätbräunung erst nach ein paar Stunden duschen. Und das Gesicht mit einem eigenen Produkt wie Shine pflegen.</p></div>
-        </div>
+      <div class="tipps">
+        <div><b>Vorher</b><span>Haut reinigen, Make-up entfernen – keine Bodylotion oder Öle auf der Acrylscheibe.</span></div>
+        <div><b>Währenddessen</b><span>Beschleuniger oder Bronzer versorgen die Haut mit Feuchtigkeit.</span></div>
+        <div><b>Danach</b><span>After-Tan gibt Feuchtigkeit zurück – die Bräune bleibt länger schön.</span></div>
       </div>
       <div class="regal">
-        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-stardust-video.jpg" aria-label="Kurzer Produktfilm seven suns Stardust"><source src="img/7suns-stardust.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Bronzer · Glow</span><b>Stardust</b><p>Bronzer mit goldenen Schimmerpartikeln für tiefe Bräune und sichtbaren Glow – mit Henna, Karottenöl und Sheabutter. Tropischer Duft.</p></figcaption></figure>
-        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-tanthrill-video.jpg" aria-label="Kurzer Produktfilm seven suns Tan Thrill"><source src="img/7suns-tanthrill.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Weißer Bronzer</span><b>Tan Thrill</b><p>Weißer Bronzer mit verzögerter Bräunung für Anspruchsvolle – mit Reishi, Tigergras und Ashwagandha. Exotisch-frischer Duft.</p></figcaption></figure>
-        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-americanglamour-video.jpg" aria-label="Kurzer Produktfilm seven suns American Glamour"><source src="img/7suns-americanglamour.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Black Bronzer</span><b>American Glamour</b><p>Starker Black Bronzer für mittlere bis dunkle Haut – mit Buritiöl, Kakaobutter und Karottenöl. Tropischer Duft.</p></figcaption></figure>
-        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-promqueen-video.jpg" aria-label="Kurzer Produktfilm seven suns Prom Queen"><source src="img/7suns-promqueen.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Ultra Dark Bronzer</span><b>Prom Queen</b><p>Ultra-dunkler Bronzer für eine gleichmäßige Bräune, die lange hält – mit Walnussschale, Aloe vera und Kokosöl. Blumig-frisch.</p></figcaption></figure>
-        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-purecharm-video.jpg" aria-label="Kurzer Produktfilm seven suns Pure Charm"><source src="img/7suns-purecharm.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Gel-Accelerator</span><b>Pure Charm</b><p>Leichtes Gel für mehr Bräune, ohne zu beschweren – mit Hanföl, Grünem Kaviar und Babassuöl. Frisch-blumiger Duft.</p></figcaption></figure>
-        <figure><img src="img/7suns-tandelight.jpg" alt="seven suns Tan Delight" loading="lazy"><figcaption><span>Beschleuniger · Butter</span><b>Tan Delight</b><p>Bräunungsbeschleuniger als zarte Body Butter – mit Hyaluron, Sheabutter und Grüntee. Fruchtig-süß, ideal auch für Einsteiger.</p></figcaption></figure>
-        <figure><img src="img/7suns-shine.jpg" alt="seven suns Shine" loading="lazy"><figcaption><span>Gesicht</span><b>Shine</b><p>Sanfter Intensifier speziell fürs Gesicht – mit Perlenextrakt, Mandelöl und Mangobutter. Frisch-würziger Duft, leichte Textur.</p></figcaption></figure>
-        <figure><img src="img/7suns-code-bronzer.jpg" alt="seven suns CODE Bronzer for Men" loading="lazy"><figcaption><span>Für Männer · Bronzer</span><b>CODE Bronzer</b><p>Dunkler Bronzer für Männer mit mittlerer bis dunkler Haut – mit Avocadoöl, Mangobutter und Walnussschale. Würziger Duft.</p></figcaption></figure>
-        <figure><img src="img/7suns-code-intensifier.jpg" alt="seven suns CODE Intensifier for Men" loading="lazy"><figcaption><span>Für Männer · Beschleuniger</span><b>CODE Intensifier</b><p>Beschleuniger für Männer mit heller Haut – mit Sanddorn, Honig und Shea- und Arganbutter. Erfrischender Duft.</p></figcaption></figure>
-        <figure><img src="img/7suns-97organic.jpg" alt="seven suns 97organic After Tan Lotion" loading="lazy"><figcaption><span>Nach dem Sonnen</span><b>97organic After Tan</b><p>Samtige Lotion für nach dem Bräunen – mit mindestens 97 % natürlichen Inhaltsstoffen, Mangobutter und Mandelöl. Fruchtig-süß.</p></figcaption></figure>
-        <figure><img src="img/7suns-goldglow.jpg" alt="seven suns Gold &amp; Glow Ampulle" loading="lazy"><figcaption><span>Ampulle</span><b>Gold &amp; Glow</b><p>Die kleine Ampulle für zwischendurch – praktisch für eine Besonnung. Wir zeigen dir gern, wie du sie anwendest.</p></figcaption></figure>
+        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-stardust-video.jpg" aria-label="Kurzer Produktfilm seven suns Stardust"><source src="img/7suns-stardust.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Bronzer · Glow</span><b>Stardust</b><p>Bronzer mit goldenen Schimmerpartikeln für tiefe Bräune und Glow.</p></figcaption></figure>
+        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-tanthrill-video.jpg" aria-label="Kurzer Produktfilm seven suns Tan Thrill"><source src="img/7suns-tanthrill.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Weißer Bronzer</span><b>Tan Thrill</b><p>Weißer Bronzer mit verzögerter Bräunung für Anspruchsvolle.</p></figcaption></figure>
+        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-americanglamour-video.jpg" aria-label="Kurzer Produktfilm seven suns American Glamour"><source src="img/7suns-americanglamour.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Black Bronzer</span><b>American Glamour</b><p>Starker Black Bronzer für mittlere bis dunkle Haut.</p></figcaption></figure>
+        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-promqueen-video.jpg" aria-label="Kurzer Produktfilm seven suns Prom Queen"><source src="img/7suns-promqueen.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Ultra Dark Bronzer</span><b>Prom Queen</b><p>Ultra-dunkler Bronzer für eine gleichmäßige, lange Bräune.</p></figcaption></figure>
+        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-purecharm-video.jpg" aria-label="Kurzer Produktfilm seven suns Pure Charm"><source src="img/7suns-purecharm.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Gel-Accelerator</span><b>Pure Charm</b><p>Leichtes Gel für mehr Bräune, ohne zu beschweren.</p></figcaption></figure>
+        <figure><img src="img/7suns-tandelight.jpg" alt="seven suns Tan Delight" loading="lazy"><figcaption><span>Beschleuniger · Butter</span><b>Tan Delight</b><p>Beschleuniger als zarte Body Butter – ideal für Einsteiger.</p></figcaption></figure>
+        <figure><img src="img/7suns-shine.jpg" alt="seven suns Shine" loading="lazy"><figcaption><span>Gesicht</span><b>Shine</b><p>Sanfter Intensifier speziell fürs Gesicht.</p></figcaption></figure>
+        <figure><img src="img/7suns-code-bronzer.jpg" alt="seven suns CODE Bronzer for Men" loading="lazy"><figcaption><span>Für Männer · Bronzer</span><b>CODE Bronzer</b><p>Dunkler Bronzer für Männer mit mittlerer bis dunkler Haut.</p></figcaption></figure>
+        <figure><img src="img/7suns-code-intensifier.jpg" alt="seven suns CODE Intensifier for Men" loading="lazy"><figcaption><span>Für Männer · Beschleuniger</span><b>CODE Intensifier</b><p>Beschleuniger für Männer mit heller Haut.</p></figcaption></figure>
+        <figure><img src="img/7suns-97organic.jpg" alt="seven suns 97organic After Tan Lotion" loading="lazy"><figcaption><span>Nach dem Sonnen</span><b>97organic After Tan</b><p>Samtige Pflege nach dem Sonnen, mind. 97 % natürliche Inhaltsstoffe.</p></figcaption></figure>
+        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-goldglow-video.jpg" aria-label="Kurzer Produktfilm seven suns Gold und Glow"><source src="img/7suns-goldglow.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Ampulle</span><b>Gold &amp; Glow</b><p>Tanning-Elixier in der Einzelampulle – genau richtig für eine Besonnung und ideal zum Ausprobieren.</p></figcaption></figure>
         <figure class="tipp"><figcaption><span>Persönliche Beratung</span><b>Welches passt zu dir?</b><p>Ob Einsteiger oder Sonnenprofi: Wir finden mit dir das passende Produkt für deine Haut und deine Bank.</p><a class="btn btn-line dunkel" href="tel:+4922089337181">Frag uns</a></figcaption></figure>
       </div>
+      <div class="wisch-hinweis">← wischen →</div>
       <p class="center klein" style="margin-top:34px">Die Auswahl im Studio kann wechseln – frag einfach an der Theke nach.</p>
     </div>
   </section>
 
-  <section class="galerie-sec">
-    <div class="wrap">
-      <div class="center"><div class="eyebrow">Einblicke</div><h2>Komm rein, <em class="gold">fühl dich wohl</em></h2><div class="ornament"><span>✦</span></div></div>
-      <div class="galerie">
-        <img src="img/lounge.jpg" alt="Lounge mit Sofas und Palme" loading="lazy">
-        <img src="img/empfang.jpg" alt="Empfang und Taschenregal" loading="lazy">
-        <img src="img/kaffee.jpg" alt="Kaffee in der Lounge" loading="lazy">
-        <img src="img/naegel.jpg" alt="Nageldesign-Platz" loading="lazy">
-        <img src="img/aussen.jpg" alt="Eingang Marktstraße 33 mit Aufsteller Geöffnet" loading="lazy">
-      </div>
-    </div>
-  </section>
+  
 
   <section class="besuch" id="besuch">
     <div class="wrap">
@@ -777,6 +844,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
    if(sichtbar&&v.paused){v.play().catch(function(){});}else if(!sichtbar&&!v.paused){v.pause();}});}
  function bald(){if(!t)t=setTimeout(pruefen,150);}
  window.addEventListener("scroll",bald,{passive:true});window.addEventListener("resize",bald);pruefen();
-})();</script><script data-goatcounter="https://sonnencenter-rheidt.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+})();</script><script>(function(){var k=document.getElementById("kopf");if(!k)return;var t=null;function p(){t=null;k.classList.toggle("klein",(window.scrollY||0)>40);}addEventListener("scroll",function(){if(!t)t=setTimeout(p,60);},{passive:true});p();})();</script>
+<script data-goatcounter="https://sonnencenter-rheidt.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
