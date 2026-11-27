@@ -460,7 +460,16 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
   .top .call .tel-text{display:none}
   .tel-icon{width:20px;height:20px}
   header.top.klein .top .call,header.top.klein .call{width:42px;height:42px}
-}</style>
+}/* Aktionen auffällig 27.11. */
+.aktion{position:relative;border-radius:16px;border:1px solid var(--gold);box-shadow:0 30px 60px -36px rgba(29,58,51,.7),0 0 0 4px rgba(176,138,62,.12);opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.aktion.sichtbar{opacity:1;transform:none}
+.aktion-stempel{position:absolute;top:26px;right:26px;z-index:3;background:var(--goldverlauf);background-size:200% 100%;color:#1E1F1D;font-weight:700;font-size:15px;letter-spacing:.28em;text-transform:uppercase;padding:12px 22px 12px 25px;border-radius:999px;box-shadow:0 14px 30px -10px rgba(0,0,0,.55);opacity:0;transform:translateX(140%) rotate(14deg) scale(.6)}
+.aktion.sichtbar .aktion-stempel{animation:stempelRein .9s cubic-bezier(.2,1.4,.4,1) .35s forwards,stempelGlanz 3.5s ease-in-out 1.6s infinite}
+@keyframes stempelRein{0%{opacity:0;transform:translateX(140%) rotate(14deg) scale(.6)}60%{opacity:1;transform:translateX(-8%) rotate(-4deg) scale(1.18)}100%{opacity:1;transform:translateX(0) rotate(-6deg) scale(1)}}
+@keyframes stempelGlanz{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+.aktion h3{opacity:0;transform:translateY(16px);transition:opacity .7s ease .55s,transform .7s ease .55s}
+.aktion.sichtbar h3{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.aktion,.aktion h3{opacity:1;transform:none;transition:none}.aktion-stempel{opacity:1;transform:rotate(-6deg);animation:none!important}}</style>
 </head>
 <body>
 
@@ -487,7 +496,7 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
 
 <main id="start">
   <section class="hero" style="padding:0">
-    <img src="img/lounge.jpg" alt="Lounge im Sonnencenter Rheidt mit grünen Samtsofas, goldenen Lampen und Palme im Fenster">
+    <img src="img/lounge.jpg" srcset="img/lounge-1080.jpg 1080w, img/lounge.jpg 1920w, img/lounge-2560.jpg 2560w" sizes="100vw" fetchpriority="high" alt="Lounge im Sonnencenter Rheidt mit grünen Samtsofas, goldenen Lampen und Palme im Fenster">
     <div class="wrap">
       <div class="eyebrow">Sonnenstudio · Niederkassel-Rheidt</div>
       <h1>Deine <em class="gold">Auszeit</em> in Rheidt.</h1>
@@ -818,9 +827,13 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
   if(aSec&&aL&&ak.length){
     aL.innerHTML=ak.map(function(a){
       var b=a.bis.split("-");
-      return '<article class="aktion"><img src="'+esc(a.bild)+'" alt="'+esc(a.bildtext||a.titel)+'" loading="lazy"><div class="a-text"><div class="eyebrow">'+esc(a.kicker||"Aktion")+'</div><h3>'+esc(a.titel)+'</h3><p>'+esc(a.text)+'</p><span class="frist">'+esc(a.frist||("Nur bis "+b[2]+"."+b[1]+"."))+'</span><a class="btn btn-gold" href="tel:+4922089337181">'+esc(a.knopf||"Jetzt anrufen")+'</a></div></article>';
+      return '<article class="aktion"><span class="aktion-stempel" aria-hidden="true">Aktion</span><img src="'+esc(a.bild)+'" alt="'+esc(a.bildtext||a.titel)+'" loading="lazy"><div class="a-text"><div class="eyebrow">'+esc(a.kicker||"Aktion")+'</div><h3>'+esc(a.titel)+'</h3><p>'+esc(a.text)+'</p><span class="frist">'+esc(a.frist||("Nur bis "+b[2]+"."+b[1]+"."))+'</span><a class="btn btn-gold" href="tel:+4922089337181">'+esc(a.knopf||"Jetzt anrufen")+'</a></div></article>';
     }).join("");
     aSec.hidden=false;
+    var aks=[].slice.call(aL.querySelectorAll(".aktion"));
+    var aT=null; function aPruefen(){aT=null;var h=window.innerHeight||document.documentElement.clientHeight;
+      aks.forEach(function(x){var r=x.getBoundingClientRect(); if(r.top<h*0.85&&r.bottom>0) x.classList.add("sichtbar");});}
+    addEventListener("scroll",function(){if(!aT)aT=setTimeout(aPruefen,80);},{passive:true}); setTimeout(aPruefen,300);
   }
 
   /* Menü am Handy */
