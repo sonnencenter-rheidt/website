@@ -469,7 +469,41 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
 @keyframes stempelGlanz{0%,100%{background-position:0 0}50%{background-position:100% 0}}
 .aktion h3{opacity:0;transform:translateY(16px);transition:opacity .7s ease .55s,transform .7s ease .55s}
 .aktion.sichtbar h3{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.aktion,.aktion h3{opacity:1;transform:none;transition:none}.aktion-stempel{opacity:1;transform:rotate(-6deg);animation:none!important}}</style>
+@media (prefers-reduced-motion:reduce){.aktion,.aktion h3{opacity:1;transform:none;transition:none}.aktion-stempel{opacity:1;transform:rotate(-6deg);animation:none!important}}/* 27.11. v9: Öffnungszeiten oben + Aktionen auffällig */
+.hero .wrap{padding-top:90px}
+.hero-zeiten{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 26px}
+.hero-zeiten .status{margin:0;font-size:14.5px;padding:10px 18px;background:rgba(14,30,26,.55);border-color:rgba(227,203,143,.6)}
+.status i{animation:puls 2s ease-in-out infinite}
+@keyframes puls{0%,100%{box-shadow:0 0 0 4px rgba(123,196,143,.25)}50%{box-shadow:0 0 0 8px rgba(123,196,143,0)}}
+.zeiten-kurz{font-size:13px;letter-spacing:.08em;color:rgba(255,255,255,.85)}
+.kopf-links{display:flex;flex-direction:column;gap:2px}
+.kopf-status{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.08em;color:var(--tinte);text-transform:none;font-weight:600}
+.kopf-status i{width:7px;height:7px;border-radius:50%;background:#3E9E5E;flex:none}
+.kopf-status.zu i{background:#D9A25B}
+.kopf-adresse{color:var(--grau);text-decoration:none;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
+.kopf-adresse:hover{color:var(--gold-tief)}
+.hero-aktion{display:inline-flex;align-items:center;gap:14px;margin:0 0 22px;padding:8px 10px 8px 8px;border-radius:999px;background:rgba(255,255,255,.96);color:var(--tinte);text-decoration:none;font-size:18px;font-weight:600;box-shadow:0 18px 40px -18px rgba(0,0,0,.6);animation:heroAktion .9s cubic-bezier(.2,1.5,.4,1) .6s both}
+.hero-aktion[hidden]{display:none}
+.hero-aktion b{background:var(--goldverlauf);background-size:200% 100%;animation:glanz 3s ease-in-out infinite;color:#1E1F1D;padding:10px 20px;border-radius:999px;font-size:14px;letter-spacing:.24em;text-transform:uppercase}
+.hero-aktion em{font-style:normal;color:var(--gold-tief);font-size:18px;padding-right:8px}
+@keyframes heroAktion{0%{opacity:0;transform:translateY(-30px) scale(.7)}100%{opacity:1;transform:none}}
+@keyframes glanz{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+.aktion{grid-template-columns:.8fr 1.2fr;grid-template-rows:auto 1fr}
+.aktion>img{grid-row:2}
+.aktion>.a-text{grid-row:2}
+.aktion-band{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 28px;background:var(--goldverlauf);background-size:200% 100%;animation:glanz 4s ease-in-out infinite;color:#1E1F1D;position:relative;overflow:hidden}
+.aktion-band::after{content:"";position:absolute;top:0;bottom:0;width:30%;left:-40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);animation:streif 3.2s ease-in-out 1.8s infinite}
+@keyframes streif{0%{left:-40%}60%,100%{left:120%}}
+.ab-wort{display:flex;gap:.12em;font-weight:700;font-size:clamp(26px,3.4vw,40px);letter-spacing:.16em}
+.ab-wort i{font-style:normal;display:inline-block;opacity:0;transform:translateY(-60px) rotate(-20deg) scale(.4)}
+.aktion.sichtbar .ab-wort i{animation:buchstabe .7s cubic-bezier(.2,1.6,.4,1) forwards;animation-delay:calc(.3s + var(--n)*.09s)}
+@keyframes buchstabe{0%{opacity:0;transform:translateY(-60px) rotate(-20deg) scale(.4)}100%{opacity:1;transform:none}}
+.ab-frist{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;background:#1E1F1D;color:#F1DDA4;padding:8px 16px;border-radius:999px;white-space:nowrap}
+.aktion .frist{display:none}
+.aktion-stempel{display:none}
+@media (max-width:760px){.aktion{grid-template-columns:1fr;grid-template-rows:auto auto auto}.aktion>img{grid-row:2}.aktion>.a-text{grid-row:3}.aktion-band{padding:14px 18px}.ab-frist{font-size:11px;padding:6px 12px}.hero-aktion{font-size:13.5px}.hero .wrap{padding-top:70px}}
+@media (prefers-reduced-motion:reduce){.ab-wort i{opacity:1;transform:none;animation:none!important}.hero-aktion{animation:none}}@media (max-width:1024px){.kopf-links{display:none!important}}
+</style>
 </head>
 <body>
 
@@ -477,7 +511,7 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
 
 <header class="top" id="kopf">
   <div class="wrap kopf-reihe">
-    <a class="kopf-links" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sonnencenter+Rheidt+Marktstra%C3%9Fe+33+53859+Niederkassel" target="_blank" rel="noopener">Marktstraße 33 · Rheidt</a>
+    <div class="kopf-links"><span class="kopf-status" id="kopf-status"></span><a class="kopf-adresse" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sonnencenter+Rheidt+Marktstra%C3%9Fe+33+53859+Niederkassel" target="_blank" rel="noopener">Marktstraße 33 · Rheidt</a></div>
     <button class="menuknopf" id="menuknopf" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span><b>Menü</b></button>
     <a class="brand" href="#start"><img src="img/logo-glanz.svg" alt="Logo Sonnencenter Rheidt"></a>
     <div class="kopf-rechts">
@@ -498,6 +532,8 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
   <section class="hero" style="padding:0">
     <img src="img/lounge.jpg" srcset="img/lounge-1080.jpg 1080w, img/lounge.jpg 1920w, img/lounge-2560.jpg 2560w" sizes="100vw" fetchpriority="high" alt="Lounge im Sonnencenter Rheidt mit grünen Samtsofas, goldenen Lampen und Palme im Fenster">
     <div class="wrap">
+      <a class="hero-aktion" id="hero-aktion" href="#aktionen" hidden><b>Aktion</b><span id="hero-aktion-text"></span><em>→</em></a>
+      <div class="hero-zeiten"><div class="status" id="status"><i></i><span>Mo–Fr 10–19 · Sa 10–18 · So 10–15 Uhr</span></div><span class="zeiten-kurz">Mo–Fr 10–19 · Sa 10–18 · So 10–15 Uhr</span></div>
       <div class="eyebrow">Sonnenstudio · Niederkassel-Rheidt</div>
       <h1>Deine <em class="gold">Auszeit</em> in Rheidt.</h1>
       <p>Gepflegte Ergoline-Sonnenbänke, persönliche Beratung und eine Lounge zum Ankommen – mitten in Rheidt, mit Parkplätzen direkt vor der Tür.</p>
@@ -505,7 +541,7 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
         <a class="btn btn-gold" href="tel:+4922089337181">Anrufen</a>
         <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sonnencenter+Rheidt+Marktstra%C3%9Fe+33+53859+Niederkassel" target="_blank" rel="noopener">Route planen</a>
       </div>
-      <div class="status" id="status"><i></i><span>Mo–Fr 10–19 · Sa 10–18 · So 10–15 Uhr</span></div>
+
     </div>
   </section>
 
@@ -766,7 +802,7 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
   var S = window.STUDIO || {};
   var jetzt = new Date();
   function iso(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
-  var heute = iso(jetzt);
+  var tp=(location.search.match(/[?&]testdatum=(\d{4}-\d\d-\d\d)/)||[])[1]; var heute = tp || iso(jetzt);
   function uhr(z){ return z.replace(":00",""); }
   function esc(t){ var d=document.createElement("div"); d.textContent=t; return d.innerHTML; }
 
@@ -819,6 +855,7 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
     if(sonder[heute]) txt += " ("+sonder[heute].name+")";
     statusEl.querySelector("span").textContent = txt || "";
     if(!offen) statusEl.classList.add("zu");
+    var ks=document.getElementById("kopf-status"); if(ks){ ks.innerHTML="<i></i>"+esc(txt||""); if(!offen) ks.classList.add("zu"); }
   }
 
   /* Aktions-Kästen */
@@ -827,9 +864,11 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
   if(aSec&&aL&&ak.length){
     aL.innerHTML=ak.map(function(a){
       var b=a.bis.split("-");
-      return '<article class="aktion"><span class="aktion-stempel" aria-hidden="true">Aktion</span><img src="'+esc(a.bild)+'" alt="'+esc(a.bildtext||a.titel)+'" loading="lazy"><div class="a-text"><div class="eyebrow">'+esc(a.kicker||"Aktion")+'</div><h3>'+esc(a.titel)+'</h3><p>'+esc(a.text)+'</p><span class="frist">'+esc(a.frist||("Nur bis "+b[2]+"."+b[1]+"."))+'</span><a class="btn btn-gold" href="tel:+4922089337181">'+esc(a.knopf||"Jetzt anrufen")+'</a></div></article>';
+      var buchst="AKTION".split("").map(function(c,i){return '<i style="--n:'+i+'">'+c+'</i>';}).join(""); return '<article class="aktion"><div class="aktion-band"><span class="ab-wort" aria-label="Aktion">'+buchst+'</span><span class="ab-frist">Nur bis '+b[2]+"."+b[1]+"."+'</span></div><img src="'+esc(a.bild)+'" alt="'+esc(a.bildtext||a.titel)+'" loading="lazy"><div class="a-text"><div class="eyebrow">'+esc(a.kicker||"Aktion")+'</div><h3>'+esc(a.titel)+'</h3><p>'+esc(a.text)+'</p><span class="frist">'+esc(a.frist||("Nur bis "+b[2]+"."+b[1]+"."))+'</span><a class="btn btn-gold" href="tel:+4922089337181">'+esc(a.knopf||"Jetzt anrufen")+'</a></div></article>';
     }).join("");
     aSec.hidden=false;
+    var ha=document.getElementById("hero-aktion"), ht=document.getElementById("hero-aktion-text");
+    if(ha&&ht){ var e0=ak[0].bis.split("-"); ht.textContent=ak[0].titel+" – nur bis "+e0[2]+"."+e0[1]+"."; ha.hidden=false; }
     var aks=[].slice.call(aL.querySelectorAll(".aktion"));
     var aT=null; function aPruefen(){aT=null;var h=window.innerHeight||document.documentElement.clientHeight;
       aks.forEach(function(x){var r=x.getBoundingClientRect(); if(r.top<h*0.85&&r.bottom>0) x.classList.add("sichtbar");});}
