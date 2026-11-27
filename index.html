@@ -405,16 +405,24 @@ em.gold,.w-ornament span,.liste b,.zitate blockquote p{font-style:normal}
 .regal figure{padding:14px 14px 18px;border-radius:14px}
 .regal b{font-size:19px}
 .regal p{font-size:14px;line-height:1.5}
-section{padding-block:clamp(64px,8vw,104px)}/* Handy: Karten als Wisch-Reihe */
+section{padding-block:clamp(64px,8vw,104px)}/* Handy: alles passt ohne Seitwärts-Scrollen */
 @media (max-width:640px){
-  .drei-karten,.regal,.zwei-karten{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:-22px;padding:4px 22px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .regal{grid-auto-columns:62%}
-  .drei-karten::-webkit-scrollbar,.regal::-webkit-scrollbar,.zwei-karten::-webkit-scrollbar{display:none}
-  .drei-karten>*,.regal>*,.zwei-karten>*{scroll-snap-align:start}
-  .wisch-hinweis{display:block}
-}
-.wisch-hinweis{display:none;text-align:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-tief);margin-top:4px}/* Kopfzeile 27.11.: Logo mittig, schrumpft beim Scrollen */
-header.top{background:rgba(255,255,255,.96)}
+  .drei-karten,.regal{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .zwei-karten{grid-template-columns:1fr;gap:18px}
+  .drei-karten .vk-text{padding:14px 14px 16px}
+  .drei-karten .vk-text .eyebrow{font-size:9.5px;letter-spacing:.12em}
+  .drei-karten .vk-text h3{font-size:19px;margin:4px 0 6px;line-height:1.2}
+  .drei-karten .vk-text p{font-size:13.5px;line-height:1.45}
+  .drei-karten .vk-text ul{display:none}
+  .drei-karten .vk-text .btn{margin-top:auto;padding:10px 6px;font-size:9.5px;letter-spacing:.06em;width:100%;white-space:nowrap}
+  .drei-karten .vk-text p{margin-bottom:12px}
+  .vk-feld span{font-size:20px}
+  .regal figure{padding:10px 10px 14px}
+  .regal b{font-size:16px}
+  .regal span{font-size:9.5px;letter-spacing:.1em}
+  .regal p{font-size:12.5px}
+  .regal figure.tipp{grid-column:1/-1}
+}header.top{background:rgba(255,255,255,.96)}
 .top .wrap.kopf-reihe{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:122px;gap:16px;transition:height .35s ease}
 .kopf-links{justify-self:start;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--grau);text-decoration:none;white-space:nowrap}
 .kopf-links:hover{color:var(--gold-tief)}
@@ -579,7 +587,6 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
             <a class="btn btn-gold" href="#pflege">Produkte ansehen</a></div>
         </article>
       </div>
-      <div class="wisch-hinweis">← wischen →</div>
     </div>
   </section>
 
@@ -612,7 +619,6 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
           </div>
         </article>
       </div>
-      <div class="wisch-hinweis">← wischen →</div>
     </div>
   </section>
   
@@ -651,7 +657,6 @@ section[id],main[id],article[id]{scroll-margin-top:140px}@media (max-width:1024p
         <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-goldglow-video.jpg" aria-label="Kurzer Produktfilm seven suns Gold und Glow"><source src="img/7suns-goldglow.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Ampulle</span><b>Gold &amp; Glow</b><p>Tanning-Elixier in der Einzelampulle – genau richtig für eine Besonnung und ideal zum Ausprobieren.</p></figcaption></figure>
         <figure class="tipp"><figcaption><span>Persönliche Beratung</span><b>Welches passt zu dir?</b><p>Ob Einsteiger oder Sonnenprofi: Wir finden mit dir das passende Produkt für deine Haut und deine Bank.</p><a class="btn btn-line dunkel" href="tel:+4922089337181">Frag uns</a></figcaption></figure>
       </div>
-      <div class="wisch-hinweis">← wischen →</div>
       <p class="center klein" style="margin-top:34px">Die Auswahl im Studio kann wechseln – frag einfach an der Theke nach.</p>
     </div>
   </section>
