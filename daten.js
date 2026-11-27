@@ -40,7 +40,7 @@ window.STUDIO = {
       frist: "04.12. – 24.12.", bild: "img/aktion-christmas-suncard.jpg", bildtext: "Christmas Suncard im Sonnencenter Rheidt", knopf: "Fragen? Ruf uns an" },
     { von: "2026-11-26", bis: "2026-12-24", kicker: "Geschenkidee", titel: "Sonne verschenken",
       text: "Ein Gutschein vom Sonnencenter Rheidt passt immer – einlösbar für Besonnung, Nageldesign, Fußpflege oder Pflegeprodukte. Erhältlich direkt bei uns im Studio.",
-      frist: "Heiligabend bis 15 Uhr geöffnet", bild: "img/aktion-gutscheine.jpg", bildtext: "Geschenkgutschein des Sonnencenter Rheidt am Weihnachtsbaum", knopf: "Jetzt anrufen" }
+      frist: "Heiligabend 10–15 Uhr geöffnet", bild: "img/aktion-gutscheine.jpg", bildtext: "Geschenkgutschein des Sonnencenter Rheidt am Weihnachtsbaum", knopf: "Jetzt anrufen" }
   ],
 
   /* Wenn gerade keine Aktion läuft */

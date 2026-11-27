@@ -89,7 +89,7 @@ nav.menu a:hover{color:var(--tinte)}nav.menu a:hover::after{transform:scaleX(1)}
 .menuknopf[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .menuknopf[aria-expanded="true"] span:nth-child(2){opacity:0}
 .menuknopf[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.nur-mobil{display:none}
+.nur-mobil{display:none}.mobil-extra{display:none}
 section[id],main[id]{scroll-margin-top:130px}
 @media (max-width:1360px){
   .top .call{margin-left:auto}
@@ -98,6 +98,7 @@ section[id],main[id]{scroll-margin-top:130px}
   nav.menu.offen{display:flex}
   nav.menu a{padding:16px 0;border-bottom:1px solid var(--linie);font-size:13px;color:var(--tinte)}
   nav.menu a::after{display:none}
+  nav.menu .mobil-extra{display:block}
   nav.menu .nur-mobil{display:block;color:var(--gold-tief);font-weight:600;border-bottom:0}
 }
 @media (max-width:520px){.brand span{display:none}}
@@ -165,6 +166,7 @@ section{padding-block:110px}
 .wellness{background:var(--weiss)}
 .wellness .kopf{max-width:680px;margin:0 auto 60px}
 .wellness .kopf p{color:var(--grau)}
+.eyebrow.gross{font-size:clamp(14px,1.6vw,17px);letter-spacing:.24em;color:var(--gold-tief);font-weight:700;display:inline-block;padding:10px 22px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);margin-bottom:18px}
 .wellness-liste{display:grid;gap:56px}
 .w-eintrag{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
 .w-eintrag.umgekehrt .w-bild{order:2}
@@ -173,12 +175,26 @@ section{padding-block:110px}
 .w-bild::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--gold);z-index:-1}
 .w-ornament{aspect-ratio:4/3;display:grid;place-items:center;background:var(--creme);text-align:center}
 .w-ornament.dunkel{background:var(--espresso)}
+.w-ornament span.einwort{white-space:nowrap;font-size:clamp(30px,3.6vw,48px)}
 .w-ornament span{font-family:var(--display);font-style:italic;font-size:clamp(34px,4vw,52px);line-height:1.1;background:var(--goldverlauf);-webkit-background-clip:text;background-clip:text;color:transparent}
 .w-text h3{font-size:clamp(30px,3.4vw,40px);margin:8px 0 14px}
 .w-text p{color:var(--grau)}
 .w-text ul{list-style:none;padding:0;margin:18px 0 26px;display:grid;gap:8px}
 .w-text li::before{content:"✦";color:var(--gold);font-size:11px;margin-right:10px}
 @media (max-width:880px){.w-eintrag{grid-template-columns:1fr;gap:34px}.w-eintrag.umgekehrt .w-bild{order:0}.w-bild::before{inset:10px 0 -10px 10px}}
+
+.extra{background:var(--creme)}
+.extra .kopf{max-width:680px;margin:0 auto 60px}
+.zwei-karten{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1000px;margin:0 auto}
+.vk{background:var(--weiss);border:1px solid var(--linie);border-top:2px solid var(--gold);display:flex;flex-direction:column}
+.vk img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.vk-text{padding:26px 28px 30px;display:flex;flex-direction:column;flex:1}
+.vk-text h3{font-size:clamp(28px,3vw,36px);margin:6px 0 8px}
+.vk-text p{color:var(--grau);margin:0}
+.vk-text ul{list-style:none;padding:0;margin:16px 0 24px;display:grid;gap:8px}
+.vk-text li::before{content:"✦";color:var(--gold);font-size:11px;margin-right:10px}
+.vk-text .btn{margin-top:auto;align-self:flex-start}
+@media (max-width:760px){.zwei-karten{grid-template-columns:1fr}}
 
 /* Aktions-Kasten */
 .aktionen{background:var(--perl);padding-block:70px 0}
@@ -351,9 +367,9 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
   <div class="wrap">
     <a class="brand" href="#start"><img src="img/logo-glanz.svg" alt="Logo Sonnencenter Rheidt"></a>
     <nav class="menu" id="menu" aria-label="Hauptmenü">
-      <a href="#erster-besuch">Erster Besuch</a><a href="#leistungen">Sonnen</a>
-      <a href="#naegel">Nägel</a><a href="#fusspflege">Fußpflege</a><a href="#pressotherapie">Pressotherapie</a>
-      <a href="#pflege">Pflege</a><a href="#besuch">Öffnungszeiten</a><a href="#fragen">Fragen</a>
+      <a class="mobil-extra" href="#erster-besuch">Erster Besuch</a><a href="#leistungen">Sonnen</a>
+      <a href="#suncard">Suncard</a><a href="#gutscheine">Gutscheine</a><a href="#naegel">Nägel</a><a href="#fusspflege">Fußpflege</a><a href="#pressotherapie">Pressotherapie</a>
+      <a href="#pflege">Pflege</a><a href="#besuch">Öffnungszeiten</a><a class="mobil-extra" href="#fragen">Fragen</a>
       <a class="nur-mobil" href="tel:+4922089337181">Anrufen · 02208 9337181</a>
     </nav>
     <a class="btn btn-gold call" href="tel:+4922089337181">02208 9337181</a>
@@ -423,15 +439,46 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
       <div class="karten">
         <article class="karte"><div class="foto"><img src="img/bank3.jpg" alt="Gepflegte Ergoline-Sonnenbank" loading="lazy"></div><div class="inhalt"><h3>Sonnenbänke</h3><p>Gepflegte Ergoline-Sonnenbänke für jeden Anspruch – vom sanften Einstieg bis zur intensiven Bräune.</p><span class="hinweis">Ohne Termin · mit Beratung</span></div></article>
         <article class="karte"><div class="foto"><img src="img/lounge-sofas.jpg" alt="Lounge mit grünen Samtsofas, goldenen Kissen und Palme im Fenster" loading="lazy"></div><div class="inhalt"><h3>Lounge &amp; Kaffee</h3><p>Vor oder nach deinem Termin: Setz dich auf unsere Samtsofas und genieß einen Kaffee – ganz ohne Eile.</p><span class="hinweis">Für alle Gäste</span></div></article>
-        <article class="karte text"><div class="inhalt"><div class="eyebrow">An der Theke</div><h3>Suncard, Gutscheine &amp; Pflege</h3><p>Die Suncard mit Bonusguthaben, Geschenkgutscheine mit frei wählbarem Betrag und Pflege von seven suns.</p><span class="hinweis">Das Geschenk, das immer passt</span></div></article>
+        <article class="karte text"><div class="inhalt"><div class="eyebrow">An der Theke</div><h3>Suncard, Gutscheine &amp; Pflege</h3><p>Die Suncard mit dauerhaft 10 % mehr Guthaben, Gutscheine für alle Leistungen und Pflege von seven suns. <a href="#suncard">Mehr zur Suncard</a></p><span class="hinweis">Das Geschenk, das immer passt</span></div></article>
       </div>
     </div>
   </section>
 
+  <section class="extra" id="suncard">
+    <div class="wrap">
+      <div class="kopf center">
+        <div class="eyebrow gross">Suncard · Gutscheine</div>
+        <h2>Mehr Sonne <em class="gold">fürs gleiche Geld</em></h2>
+        <div class="ornament"><span>✦</span></div>
+      </div>
+      <div class="zwei-karten">
+        <article class="vk">
+          <img src="img/suncard.jpg" alt="Suncard des Sonnencenter Rheidt in der Hand vor der Palmentapete" loading="lazy">
+          <div class="vk-text">
+            <div class="eyebrow">Unsere Kundenkarte</div>
+            <h3>Suncard</h3>
+            <p>Lade deine Suncard auf und sonn dich günstiger.</p>
+            <ul><li>Dauerhaft 10 % mehr Guthaben</li><li>Aufladen direkt an der Theke</li><li>Bezahlen bei jedem Besuch</li></ul>
+            <a class="btn btn-gold" href="tel:+4922089337181">Fragen? Ruf uns an</a>
+          </div>
+        </article>
+        <article class="vk" id="gutscheine">
+          <img src="img/gutschein.jpg" alt="Geschenkgutschein des Sonnencenter Rheidt in der Hand vor der Palmentapete" loading="lazy">
+          <div class="vk-text">
+            <div class="eyebrow">Das ganze Jahr</div>
+            <h3>Gutscheine</h3>
+            <p>Verschenk eine Auszeit – zum Geburtstag, zu Weihnachten oder einfach so.</p>
+            <ul><li>Gültig für alle Leistungen</li><li>Sonne, Nägel, Fußpflege, Pflege</li><li>Direkt an der Theke erhältlich</li></ul>
+            <a class="btn btn-gold" href="tel:+4922089337181">Jetzt anrufen</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
   <section class="wellness" id="wellness">
     <div class="wrap">
       <div class="kopf center">
-        <div class="eyebrow">Nägel · Fußpflege · Pressotherapie</div>
+        <div class="eyebrow gross">Nägel · Fußpflege · Pressotherapie</div>
         <h2>Gönn dir mehr als <em class="gold">nur Sonne</em></h2>
         <div class="ornament"><span>✦</span></div>
         <p>Nageldesign, kosmetische Fußpflege und ab Januar Pressotherapie – alles in unserem Studio in Niederkassel-Rheidt, mit Parkplätzen direkt vor der Tür.</p>
@@ -458,7 +505,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
           </div>
         </article>
         <article class="w-eintrag" id="pressotherapie">
-          <div class="w-bild w-ornament dunkel"><span>Presso-<br>therapie</span></div>
+          <div class="w-bild w-ornament dunkel"><span class="einwort">Pressotherapie</span></div>
           <div class="w-text">
             <div class="eyebrow" id="presso-label">Neu im Studio</div>
             <h3>Pressotherapie</h3>
@@ -486,7 +533,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
         </div>
       </div>
       <div class="duo">
-        <img src="img/bank6.jpg" alt="Geöffnete Ergoline-Sonnenbank" loading="lazy">
+        <img src="img/bank-roehren.jpg" alt="Sonnenbank mit leuchtenden Röhren im Sonnencenter Rheidt" loading="lazy">
         <img src="img/bank1.jpg" alt="Gereinigte Liegefläche mit Schild it's clean" loading="lazy">
       </div>
     </div>
@@ -515,7 +562,7 @@ footer .unten{grid-column:1/-1;border-top:1px solid rgba(226,201,140,.2);padding
       </div>
       <div class="regal">
         <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-stardust-video.jpg" aria-label="Kurzer Produktfilm seven suns Stardust"><source src="img/7suns-stardust.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Bronzer · Glow</span><b>Stardust</b><p>Bronzer mit goldenen Schimmerpartikeln für tiefe Bräune und sichtbaren Glow – mit Henna, Karottenöl und Sheabutter. Tropischer Duft.</p></figcaption></figure>
-        <figure><img src="img/7suns-tanthrill.jpg" alt="seven suns Tan Thrill" loading="lazy"><figcaption><span>Weißer Bronzer</span><b>Tan Thrill</b><p>Weißer Bronzer mit verzögerter Bräunung für Anspruchsvolle – mit Reishi, Tigergras und Ashwagandha. Exotisch-frischer Duft.</p></figcaption></figure>
+        <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-tanthrill-video.jpg" aria-label="Kurzer Produktfilm seven suns Tan Thrill"><source src="img/7suns-tanthrill.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Weißer Bronzer</span><b>Tan Thrill</b><p>Weißer Bronzer mit verzögerter Bräunung für Anspruchsvolle – mit Reishi, Tigergras und Ashwagandha. Exotisch-frischer Duft.</p></figcaption></figure>
         <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-americanglamour-video.jpg" aria-label="Kurzer Produktfilm seven suns American Glamour"><source src="img/7suns-americanglamour.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Black Bronzer</span><b>American Glamour</b><p>Starker Black Bronzer für mittlere bis dunkle Haut – mit Buritiöl, Kakaobutter und Karottenöl. Tropischer Duft.</p></figcaption></figure>
         <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-promqueen-video.jpg" aria-label="Kurzer Produktfilm seven suns Prom Queen"><source src="img/7suns-promqueen.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Ultra Dark Bronzer</span><b>Prom Queen</b><p>Ultra-dunkler Bronzer für eine gleichmäßige Bräune, die lange hält – mit Walnussschale, Aloe vera und Kokosöl. Blumig-frisch.</p></figcaption></figure>
         <figure><div class="pvid"><video class="autovideo" muted loop playsinline preload="none" poster="img/7suns-purecharm-video.jpg" aria-label="Kurzer Produktfilm seven suns Pure Charm"><source src="img/7suns-purecharm.mp4" type="video/mp4"></video><small>KI-Video</small></div><figcaption><span>Gel-Accelerator</span><b>Pure Charm</b><p>Leichtes Gel für mehr Bräune, ohne zu beschweren – mit Hanföl, Grünem Kaviar und Babassuöl. Frisch-blumiger Duft.</p></figcaption></figure>
